@@ -13,6 +13,7 @@ export default function Hero() {
         fill
         priority
         fetchPriority="high"
+        quality={60}
         sizes="100vw"
         className={styles.heroBackground}
       />
