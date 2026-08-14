@@ -1,0 +1,876 @@
+/* =========================================================
+   OMKAR AUTOCARE — FAQ SECTION
+   Premium / Minimal / 2-Column Desktop
+========================================================= */
+
+.section {
+  position: relative;
+
+  width: 100%;
+
+  padding: 88px 0 96px;
+
+  background: #222222;
+
+  color: #ffffff;
+
+  font-family:
+    var(--font-montserrat),
+    "Montserrat",
+    sans-serif;
+}
+
+
+/* =========================================================
+   HERO OUTER CONTAINER
+========================================================= */
+
+.inner {
+  width: min(calc(100% - 96px), 1540px);
+
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.heading {
+  width: min(100%, 1242px);
+
+  margin: 0 auto 46px;
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   EYEBROW
+========================================================= */
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  margin-bottom: 13px;
+
+  color: #fd8833;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  line-height: 1;
+
+  letter-spacing: 0.2em;
+
+  text-transform: uppercase;
+}
+
+.eyebrow::before,
+.eyebrow::after {
+  content: "";
+
+  width: 22px;
+  height: 2px;
+
+  background: #fd8833;
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.heading h2 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size:
+    clamp(36px, 3vw, 48px);
+
+  font-weight: 600;
+
+  line-height: 1.08;
+
+  letter-spacing: -0.04em;
+}
+
+
+/* =========================================================
+   HEADING DESCRIPTION
+========================================================= */
+
+.heading p {
+  width: min(100%, 620px);
+
+  margin: 15px auto 0;
+
+  color: rgba(255, 255, 255, 0.58);
+
+  font-size: 13px;
+  font-weight: 400;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   FAQ COLUMNS
+========================================================= */
+
+.columns {
+  width: min(100%, 1242px);
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 48px;
+
+  align-items: start;
+}
+
+
+/* =========================================================
+   EACH FAQ COLUMN
+========================================================= */
+
+.column {
+  width: 100%;
+
+  border-top:
+    1px solid
+    rgba(255, 255, 255, 0.08);
+}
+
+
+/* =========================================================
+   FAQ ITEM
+========================================================= */
+
+.item {
+  width: 100%;
+
+  border-bottom:
+    1px solid
+    rgba(255, 255, 255, 0.08);
+}
+
+
+/* =========================================================
+   QUESTION
+========================================================= */
+
+.question {
+  width: 100%;
+
+  min-height: 60px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 18px;
+
+  padding:
+    16px
+    2px;
+
+  border: 0;
+
+  background: transparent;
+
+  color: rgba(255, 255, 255, 0.92);
+
+  font-family:
+    var(--font-montserrat),
+    "Montserrat",
+    sans-serif;
+
+  font-size: 14px;
+  font-weight: 400;
+
+  line-height: 1.45;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition:
+    color 0.22s ease,
+    padding-left 0.22s ease;
+}
+
+
+/* =========================================================
+   QUESTION TEXT
+========================================================= */
+
+.questionText {
+  min-width: 0;
+
+  display: flex;
+  align-items: baseline;
+
+  gap: 8px;
+}
+
+
+/* =========================================================
+   FAQ NUMBER
+========================================================= */
+
+.number {
+  color: rgba(255, 255, 255, 0.42);
+
+  font-size: 11px;
+  font-weight: 500;
+
+  line-height: 1;
+
+  flex-shrink: 0;
+
+  transition: color 0.22s ease;
+}
+
+
+/* =========================================================
+   QUESTION HIGHLIGHT
+========================================================= */
+
+.question strong {
+  color: #fd8833;
+
+  font-weight: 500;
+}
+
+
+/* =========================================================
+   QUESTION HOVER
+========================================================= */
+
+.question:hover {
+  color: #ffffff;
+
+  padding-left: 8px;
+}
+
+.question:hover .number {
+  color: #fd8833;
+}
+
+
+/* =========================================================
+   OPEN STATE
+========================================================= */
+
+.itemOpen .question {
+  color: #ffffff;
+}
+
+.itemOpen .number {
+  color: #fd8833;
+}
+
+
+/* =========================================================
+   CHEVRON
+========================================================= */
+
+.chevron {
+  width: 18px;
+  height: 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: rgba(255, 255, 255, 0.38);
+
+  flex-shrink: 0;
+
+  transition:
+    color 0.22s ease,
+    transform 0.28s ease;
+}
+
+.chevron svg {
+  width: 16px;
+  height: 16px;
+}
+
+.question:hover .chevron {
+  color: #fd8833;
+}
+
+.chevronOpen {
+  color: #fd8833;
+
+  transform: rotate(180deg);
+}
+
+
+/* =========================================================
+   ANSWER ANIMATION
+========================================================= */
+
+.answerWrap {
+  display: grid;
+
+  grid-template-rows: 0fr;
+
+  opacity: 0;
+
+  transition:
+    grid-template-rows 0.32s ease,
+    opacity 0.25s ease;
+}
+
+.answerWrapOpen {
+  grid-template-rows: 1fr;
+
+  opacity: 1;
+}
+
+
+/* =========================================================
+   ANSWER
+========================================================= */
+
+.answer {
+  min-height: 0;
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   ANSWER PARAGRAPHS
+========================================================= */
+
+.answer p {
+  width: calc(100% - 30px);
+
+  margin:
+    0
+    0
+    18px
+    28px;
+
+  padding-right: 10px;
+
+  color: rgba(255, 255, 255, 0.68);
+
+  font-size: 12.5px;
+  font-weight: 400;
+
+  line-height: 1.65;
+}
+
+.answer p + p {
+  margin-top: 10px;
+}
+
+
+/* =========================================================
+   ANSWER STRONG
+========================================================= */
+
+.answer strong {
+  color: #fd8833;
+
+  font-weight: 500;
+}
+
+
+/* =========================================================
+   ANSWER LINKS
+========================================================= */
+
+.answer a {
+  color: #ffffff;
+
+  font-weight: 500;
+
+  text-decoration: none;
+
+  transition: color 0.2s ease;
+}
+
+.answer a:hover {
+  color: #fd8833;
+}
+
+
+/* =========================================================
+   LARGE DESKTOP
+========================================================= */
+
+@media (min-width: 1600px) {
+
+  .section {
+    padding:
+      100px
+      0
+      110px;
+  }
+
+
+  .inner {
+    width: min(calc(100% - 104px), 1600px);
+  }
+
+
+  .heading,
+  .columns {
+    width: min(100%, 1300px);
+  }
+
+
+  .heading {
+    margin-bottom: 52px;
+  }
+
+
+  .heading h2 {
+    font-size: 52px;
+  }
+
+
+  .heading p {
+    font-size: 14px;
+  }
+
+
+  .columns {
+    gap: 58px;
+  }
+
+
+  .question {
+    min-height: 66px;
+
+    padding:
+      18px
+      3px;
+
+    font-size: 15px;
+  }
+
+
+  .number {
+    font-size: 12px;
+  }
+
+
+  .answer p {
+    font-size: 13.5px;
+
+    line-height: 1.7;
+  }
+}
+
+
+/* =========================================================
+   MACBOOK / NORMAL DESKTOP
+========================================================= */
+
+@media (min-width: 1101px) and (max-width: 1599px) {
+
+  .section {
+    padding:
+      74px
+      0
+      82px;
+  }
+
+
+  .inner {
+    width: min(calc(100% - 96px), 1540px);
+  }
+
+
+  .heading,
+  .columns {
+    width: min(100%, 1242px);
+  }
+
+
+  .heading {
+    margin-bottom: 40px;
+  }
+
+
+  .heading h2 {
+    font-size:
+      clamp(34px, 2.7vw, 42px);
+  }
+
+
+  .heading p {
+    margin-top: 13px;
+
+    font-size: 12px;
+  }
+
+
+  .columns {
+    gap: 46px;
+  }
+
+
+  .question {
+    min-height: 56px;
+
+    padding:
+      15px
+      2px;
+
+    font-size: 13.5px;
+  }
+
+
+  .number {
+    font-size: 11px;
+  }
+
+
+  .chevron {
+    width: 17px;
+    height: 17px;
+  }
+
+
+  .chevron svg {
+    width: 15px;
+    height: 15px;
+  }
+
+
+  .answer p {
+    width: calc(100% - 28px);
+
+    margin:
+      0
+      0
+      17px
+      27px;
+
+    font-size: 12px;
+
+    line-height: 1.65;
+  }
+}
+
+
+/* =========================================================
+   TABLET
+   BACK TO SINGLE COLUMN
+========================================================= */
+
+@media (min-width: 768px) and (max-width: 1100px) {
+
+  .section {
+    padding:
+      66px
+      0
+      72px;
+  }
+
+
+  .inner {
+    width: min(calc(100% - 40px), 1540px);
+  }
+
+
+  .heading,
+  .columns {
+    width: 100%;
+  }
+
+
+  .heading {
+    margin-bottom: 38px;
+  }
+
+
+  .heading h2 {
+    font-size:
+      clamp(30px, 4vw, 38px);
+  }
+
+
+  .heading p {
+    font-size: 11.5px;
+  }
+
+
+  .columns {
+    grid-template-columns: 1fr;
+
+    gap: 0;
+  }
+
+
+  /*
+    Remove duplicated middle border
+    when both groups stack.
+  */
+
+  .column + .column {
+    border-top: 0;
+  }
+
+
+  .question {
+    min-height: 58px;
+
+    gap: 18px;
+
+    padding:
+      16px
+      2px;
+
+    font-size: 14px;
+
+    line-height: 1.45;
+  }
+
+
+  .number {
+    font-size: 11px;
+  }
+
+
+  .answer p {
+    width: calc(100% - 34px);
+
+    margin:
+      0
+      0
+      18px
+      34px;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   SINGLE COLUMN
+========================================================= */
+
+@media (max-width: 767px) {
+
+  .section {
+    padding:
+      58px
+      0
+      64px;
+  }
+
+
+  .inner {
+    width: calc(100% - 36px);
+
+    margin: 0 auto;
+  }
+
+
+  .heading,
+  .columns {
+    width: 100%;
+  }
+
+
+  .heading {
+    margin-bottom: 34px;
+
+    text-align: left;
+  }
+
+
+  .eyebrow {
+    margin-bottom: 11px;
+
+    font-size: 8.5px;
+
+    letter-spacing: 0.18em;
+  }
+
+
+  .eyebrow::before {
+    width: 20px;
+  }
+
+
+  .eyebrow::after {
+    display: none;
+  }
+
+
+  .heading h2 {
+    font-size:
+      clamp(28px, 7.5vw, 35px);
+
+    line-height: 1.08;
+  }
+
+
+  .heading p {
+    width: 100%;
+
+    margin:
+      12px
+      0
+      0;
+
+    font-size: 12px;
+
+    line-height: 1.55;
+  }
+
+
+  .columns {
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    gap: 0;
+  }
+
+
+  .column + .column {
+    border-top: 0;
+  }
+
+
+  .question {
+    min-height: 60px;
+
+    gap: 14px;
+
+    padding:
+      15px
+      0;
+
+    font-size: 13px;
+
+    line-height: 1.45;
+  }
+
+
+  .question:hover {
+    padding-left: 0;
+  }
+
+
+  .questionText {
+    gap: 7px;
+  }
+
+
+  .number {
+    font-size: 10px;
+  }
+
+
+  .chevron {
+    width: 17px;
+    height: 17px;
+  }
+
+
+  .chevron svg {
+    width: 15px;
+    height: 15px;
+  }
+
+
+  .answer p {
+    width: 100%;
+
+    margin:
+      0
+      0
+      18px
+      0;
+
+    padding-left: 25px;
+    padding-right: 0;
+
+    color: rgba(255, 255, 255, 0.68);
+
+    font-size: 12px;
+
+    line-height: 1.6;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 420px) {
+
+  .section {
+    padding:
+      52px
+      0
+      58px;
+  }
+
+
+  .inner {
+    width: calc(100% - 30px);
+  }
+
+
+  .heading {
+    margin-bottom: 30px;
+  }
+
+
+  .heading h2 {
+    font-size: 27px;
+  }
+
+
+  .question {
+    min-height: 58px;
+
+    font-size: 12.5px;
+  }
+
+
+  .answer p {
+    font-size: 11.5px;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .question,
+  .number,
+  .chevron,
+  .answerWrap {
+    transition: none;
+  }
+}

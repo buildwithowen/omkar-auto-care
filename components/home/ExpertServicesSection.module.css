@@ -1,0 +1,917 @@
+/* =========================================================
+   OMKAR AUTOCARE — EXPERT / SERVICES SECTION
+   Premium / Minimalist / Hero-Aligned Container
+========================================================= */
+
+.section {
+  position: relative;
+
+  width: 100%;
+
+  padding:
+    90px
+    0
+    100px;
+
+  background: #f7f7f5;
+
+  color: #202020;
+
+  overflow: hidden;
+
+  font-family:
+    var(--font-montserrat),
+    "Montserrat",
+    sans-serif;
+}
+
+
+/* =========================================================
+   MAIN CONTAINER
+   EXACTLY MATCHES HERO
+========================================================= */
+
+.inner {
+  width: min(calc(100% - 96px), 1540px);
+
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   ROW
+========================================================= */
+
+.row {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.12fr)
+    minmax(360px, 0.72fr);
+
+  align-items: center;
+
+  gap: 90px;
+}
+
+.row + .row {
+  margin-top: 90px;
+}
+
+
+/* =========================================================
+   SECOND ROW
+========================================================= */
+
+.rowReverse {
+  grid-template-columns:
+    minmax(400px, 0.82fr)
+    minmax(0, 1fr);
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.content {
+  width: 100%;
+  max-width: 830px;
+}
+
+
+/* =========================================================
+   EYEBROW
+========================================================= */
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  margin-bottom: 16px;
+
+  color: #fd8833;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  line-height: 1;
+
+  letter-spacing: 0.2em;
+
+  text-transform: uppercase;
+}
+
+.eyebrow::before {
+  content: "";
+
+  width: 28px;
+  height: 2px;
+
+  background: #fd8833;
+
+  flex-shrink: 0;
+}
+
+
+/* =========================================================
+   HEADINGS
+========================================================= */
+
+.content h2 {
+  margin: 0;
+
+  max-width: 820px;
+
+  color: #1d1d1d;
+
+  font-size:
+    clamp(34px, 3vw, 50px);
+
+  font-weight: 600;
+
+  line-height: 1.06;
+
+  letter-spacing: -0.045em;
+}
+
+
+/* =========================================================
+   BODY COPY
+========================================================= */
+
+.copy {
+  max-width: 780px;
+
+  margin-top: 24px;
+}
+
+.copy p {
+  margin:
+    0
+    0
+    13px;
+
+  color: #575757;
+
+  font-size: 14px;
+  font-weight: 400;
+
+  line-height: 1.7;
+
+  letter-spacing: -0.012em;
+}
+
+.copy p:last-child {
+  margin-bottom: 0;
+}
+
+.copy strong {
+  color: #fd8833;
+
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   ACTIONS
+========================================================= */
+
+.actions {
+  display: flex;
+  align-items: center;
+
+  gap: 26px;
+
+  margin-top: 28px;
+}
+
+
+/* =========================================================
+   PHONE
+========================================================= */
+
+.phone {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 10px;
+
+  color: #202020;
+
+  text-decoration: none;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  white-space: nowrap;
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.phoneIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #fd8833;
+
+  font-size: 17px;
+}
+
+.phone:hover {
+  color: #fd8833;
+
+  transform: translateX(2px);
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.cta {
+  min-height: 48px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0 26px;
+
+  border: 0;
+  border-radius: 4px;
+
+  background: #fd8833;
+
+  color: #ffffff;
+
+  font-family:
+    var(--font-montserrat),
+    "Montserrat",
+    sans-serif;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  line-height: 1;
+
+  white-space: nowrap;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.22s ease,
+    transform 0.22s ease,
+    box-shadow 0.22s ease;
+}
+
+.cta:hover {
+  background: #f6781f;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 10px 28px rgba(253, 136, 51, 0.2);
+}
+
+
+/* =========================================================
+   IMAGE SIDE
+========================================================= */
+
+.imageSide {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* =========================================================
+   IMAGE WRAPPERS
+========================================================= */
+
+.imageWrap,
+.imageWrapLarge {
+  position: relative;
+
+  width: 100%;
+
+  overflow: hidden;
+
+  background: #e7e7e5;
+
+  box-shadow:
+    0 24px 50px rgba(0, 0, 0, 0.1);
+}
+
+
+/* TOP IMAGE */
+
+.imageWrap {
+  max-width: 460px;
+
+  aspect-ratio: 0.95;
+}
+
+
+/* BOTTOM IMAGE */
+
+.imageWrapLarge {
+  max-width: 570px;
+
+  aspect-ratio: 1.38;
+}
+
+
+/* =========================================================
+   IMAGE
+========================================================= */
+
+.image {
+  object-fit: cover;
+
+  transition:
+    transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.imageWrap:hover .image,
+.imageWrapLarge:hover .image {
+  transform: scale(1.025);
+}
+
+
+/* =========================================================
+   IMAGE ACCENT
+========================================================= */
+
+.imageAccent {
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  z-index: 2;
+
+  width: 100%;
+  height: 3px;
+
+  background: #fd8833;
+}
+
+
+/* =========================================================
+   COMMITMENT
+========================================================= */
+
+.commitment {
+  margin-top: 20px;
+}
+
+.commitmentTitle {
+  margin:
+    0
+    0
+    10px;
+
+  color: #292929;
+
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.commitment ul {
+  margin: 0;
+
+  padding: 0;
+
+  list-style: none;
+}
+
+.commitment li {
+  position: relative;
+
+  margin-bottom: 7px;
+
+  padding-left: 28px;
+
+  color: #515151;
+
+  font-size: 13px;
+
+  line-height: 1.5;
+}
+
+.commitment li:last-child {
+  margin-bottom: 0;
+}
+
+.commitment li::before {
+  content: "✓";
+
+  position: absolute;
+
+  top: -2px;
+  left: 0;
+
+  color: #fd8833;
+
+  font-size: 18px;
+  font-weight: 500;
+}
+
+
+/* =========================================================
+   LARGE DESKTOP
+   EXACT HERO CONTAINER
+========================================================= */
+
+@media (min-width: 1600px) {
+
+  .section {
+    padding:
+      110px
+      0
+      120px;
+  }
+
+  .inner {
+    width: min(calc(100% - 104px), 1600px);
+  }
+
+  .row {
+    grid-template-columns:
+      minmax(0, 1.15fr)
+      minmax(420px, 0.7fr);
+
+    gap: 110px;
+  }
+
+  .row + .row {
+    margin-top: 110px;
+  }
+
+  .rowReverse {
+    grid-template-columns:
+      minmax(460px, 0.82fr)
+      minmax(0, 1fr);
+  }
+
+  .content {
+    max-width: 870px;
+  }
+
+  .content h2 {
+    font-size: 54px;
+  }
+
+  .copy p {
+    font-size: 15px;
+  }
+
+  .imageWrap {
+    max-width: 500px;
+  }
+
+  .imageWrapLarge {
+    max-width: 630px;
+  }
+}
+
+
+/* =========================================================
+   MACBOOK / NORMAL LAPTOP
+========================================================= */
+
+@media (min-width: 1101px) and (max-width: 1599px) {
+
+  .section {
+    padding-top: 72px;
+    padding-bottom: 82px;
+  }
+
+  .row {
+    gap: 72px;
+  }
+
+  .row + .row {
+    margin-top: 72px;
+  }
+
+  .content h2 {
+    font-size:
+      clamp(34px, 2.8vw, 46px);
+  }
+
+  .copy {
+    margin-top: 20px;
+  }
+
+  .copy p {
+    margin-bottom: 11px;
+
+    font-size: 13px;
+
+    line-height: 1.65;
+  }
+
+  .actions {
+    margin-top: 24px;
+  }
+
+  .imageWrap {
+    max-width: 420px;
+
+    aspect-ratio: 0.98;
+  }
+
+  .imageWrapLarge {
+    max-width: 520px;
+
+    aspect-ratio: 1.42;
+  }
+}
+
+
+/* =========================================================
+   TABLET / SMALL LAPTOP
+   EXACT HERO CONTAINER
+========================================================= */
+
+@media (min-width: 768px) and (max-width: 1100px) {
+
+  .section {
+    padding:
+      75px
+      0
+      85px;
+  }
+
+  .inner {
+    width: min(calc(100% - 40px), 1540px);
+  }
+
+  .row {
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(280px, 0.72fr);
+
+    gap: 42px;
+  }
+
+  .rowReverse {
+    grid-template-columns:
+      minmax(290px, 0.8fr)
+      minmax(0, 1fr);
+  }
+
+  .row + .row {
+    margin-top: 75px;
+  }
+
+  .eyebrow {
+    margin-bottom: 13px;
+
+    font-size: 9px;
+  }
+
+  .content h2 {
+    font-size:
+      clamp(28px, 3.8vw, 40px);
+
+    line-height: 1.08;
+  }
+
+  .copy {
+    margin-top: 18px;
+  }
+
+  .copy p {
+    margin-bottom: 10px;
+
+    font-size: 11.5px;
+
+    line-height: 1.62;
+  }
+
+  .actions {
+    gap: 16px;
+
+    margin-top: 22px;
+  }
+
+  .phone {
+    font-size: 12px;
+  }
+
+  .phoneIcon {
+    font-size: 14px;
+  }
+
+  .cta {
+    min-height: 44px;
+
+    padding: 0 18px;
+
+    font-size: 10.5px;
+  }
+
+  .imageWrap {
+    max-width: 330px;
+  }
+
+  .imageWrapLarge {
+    max-width: 410px;
+  }
+
+  .commitment {
+    margin-top: 16px;
+  }
+
+  .commitmentTitle {
+    font-size: 11.5px;
+  }
+
+  .commitment li {
+    margin-bottom: 6px;
+
+    padding-left: 22px;
+
+    font-size: 10.5px;
+
+    line-height: 1.5;
+  }
+
+  .commitment li::before {
+    font-size: 16px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   TRUE ALTERNATING FLOW:
+   TEXT → IMAGE → TEXT → IMAGE
+========================================================= */
+
+@media (max-width: 767px) {
+
+  .section {
+    padding:
+      72px
+      0
+      80px;
+  }
+
+  .inner {
+    width: calc(100% - 36px);
+
+    margin: 0 auto;
+  }
+
+
+  /* ROWS */
+
+  .row,
+  .rowReverse {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 34px;
+  }
+
+  .row + .row {
+    margin-top: 82px;
+  }
+
+
+  /* EXACT MOBILE ORDER */
+
+  .row .content,
+  .rowReverse .content {
+    order: 1;
+  }
+
+  .row .imageSide,
+  .rowReverse .imageSide {
+    order: 2;
+  }
+
+
+  /* CONTENT */
+
+  .content {
+    width: 100%;
+    max-width: 100%;
+  }
+
+
+  /* EYEBROW */
+
+  .eyebrow {
+    margin-bottom: 15px;
+
+    font-size: 9px;
+
+    letter-spacing: 0.18em;
+  }
+
+  .eyebrow::before {
+    width: 22px;
+  }
+
+
+  /* HEADING */
+
+  .content h2 {
+    width: 100%;
+    max-width: none;
+
+    margin: 0;
+
+    font-size:
+      clamp(29px, 8vw, 38px);
+
+    line-height: 1.08;
+
+    letter-spacing: -0.04em;
+  }
+
+  .content h2 br {
+    display: none;
+  }
+
+
+  /* COPY */
+
+  .copy {
+    width: 100%;
+
+    margin-top: 22px;
+  }
+
+  .copy p {
+    margin:
+      0
+      0
+      13px;
+
+    font-size: 13px;
+
+    line-height: 1.68;
+  }
+
+  .copy p:last-child {
+    margin-bottom: 0;
+  }
+
+
+  /* ACTIONS */
+
+  .actions {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    align-items: center;
+
+    gap: 16px;
+
+    margin-top: 27px;
+  }
+
+  .phone {
+    font-size: 14px;
+  }
+
+  .phoneIcon {
+    font-size: 16px;
+  }
+
+  .cta {
+    min-height: 48px;
+
+    padding: 0 22px;
+
+    font-size: 12px;
+  }
+
+
+  /* IMAGES */
+
+  .imageSide {
+    width: 100%;
+  }
+
+  .imageWrap,
+  .imageWrapLarge {
+    width: 100%;
+
+    max-width: none;
+
+    aspect-ratio: 1.15 / 1;
+  }
+
+
+  /* COMMITMENT */
+
+  .commitment {
+    margin-top: 22px;
+  }
+
+  .commitmentTitle {
+    font-size: 13px;
+  }
+
+  .commitment li {
+    padding-left: 26px;
+
+    font-size: 12.5px;
+
+    line-height: 1.55;
+  }
+
+  .commitment li::before {
+    font-size: 18px;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 420px) {
+
+  .section {
+    padding:
+      62px
+      0
+      68px;
+  }
+
+  .inner {
+    width: calc(100% - 30px);
+
+    margin: 0 auto;
+  }
+
+  .row,
+  .rowReverse {
+    gap: 30px;
+  }
+
+  .row + .row {
+    margin-top: 72px;
+  }
+
+  .content h2 {
+    font-size: 28px;
+  }
+
+  .copy p {
+    font-size: 12.5px;
+  }
+
+  .actions {
+    align-items: stretch;
+
+    flex-direction: column;
+
+    gap: 12px;
+  }
+
+  .phone {
+    min-height: 42px;
+  }
+
+  .cta {
+    width: 100%;
+  }
+
+  .imageWrap,
+  .imageWrapLarge {
+    aspect-ratio: 1.08 / 1;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .image,
+  .phone,
+  .cta {
+    transition: none;
+  }
+}

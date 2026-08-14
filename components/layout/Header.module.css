@@ -1,0 +1,892 @@
+/* =========================================================
+   OMKAR AUTOCARE — HEADER
+   FINAL REFINED VERSION
+========================================================= */
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  color: #ffffff;
+
+  font-family:
+    var(--font-montserrat),
+    "Montserrat",
+    Arial,
+    sans-serif;
+}
+
+.header *,
+.header button,
+.header a {
+  font-family:
+    var(--font-montserrat),
+    "Montserrat",
+    Arial,
+    sans-serif;
+}
+
+.inner {
+  width: min(100% - 96px, 1540px);
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   TOP ROW
+========================================================= */
+
+.topRow {
+  min-height: 148px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 42px;
+
+  padding-top: 8px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+
+  gap: 24px;
+
+  color: inherit;
+  text-decoration: none;
+}
+
+.logoWrap {
+  width: 275px;
+  flex-shrink: 0;
+}
+
+.logo {
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  object-fit: contain;
+}
+
+.tagline {
+  color: #ffffff;
+
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.3;
+
+  white-space: nowrap;
+
+  letter-spacing: -0.015em;
+}
+
+.tagline span {
+  color: #fd8833;
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   TOP ACTIONS
+========================================================= */
+
+.topActions {
+  display: flex;
+  align-items: center;
+
+  gap: 28px;
+}
+
+.phone {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 9px;
+
+  color: #ffffff;
+  text-decoration: none;
+
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1;
+
+  white-space: nowrap;
+
+  transition: color 0.2s ease;
+}
+
+.phone:hover {
+  color: #fd8833;
+}
+
+.phoneIcon {
+  color: #fd8833;
+
+  font-size: 17px;
+  line-height: 1;
+}
+
+.cta {
+  min-width: 145px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 17px 24px;
+
+  background: #fd8833;
+
+  color: #ffffff;
+
+  text-align: center;
+  text-decoration: none;
+
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1;
+
+  border-radius: 4px;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.cta:hover {
+  background: #f6781f;
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   DESKTOP + TABLET NAV
+========================================================= */
+
+.nav {
+  min-height: 72px;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  padding-bottom: 10px;
+  padding-right: 26px;
+
+  /* Safely move navigation upward */
+  transform: translateY(-14px);
+}
+
+.navLink,
+.navButton {
+  position: relative;
+
+  min-height: 72px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  padding: 0 26px;
+
+  border: 0;
+  background: transparent;
+
+  color: rgba(255, 255, 255, 0.88);
+
+  text-decoration: none;
+
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1;
+
+  letter-spacing: -0.01em;
+
+  cursor: pointer;
+
+  transition: color 0.2s ease;
+}
+
+.navLink::before,
+.navButton::before {
+  content: "";
+
+  position: absolute;
+
+  top: 24px;
+  bottom: 24px;
+  left: 0;
+
+  width: 1px;
+
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.navLink:hover,
+.navButton:hover {
+  color: #fd8833;
+}
+
+.servicesItem {
+  position: relative;
+}
+
+
+/* =========================================================
+   SOLID SERVICES CHEVRON
+========================================================= */
+
+.chevron {
+  display: inline-block;
+
+  width: 9px;
+  height: 9px;
+
+  margin-left: 5px;
+  margin-top: -4px;
+
+  /* Hide original ⌄ character */
+  font-size: 0;
+  line-height: 0;
+
+  border-right: 2.5px solid #ffffff;
+  border-bottom: 2.5px solid #ffffff;
+
+  transform: rotate(45deg);
+
+  opacity: 1;
+
+  flex-shrink: 0;
+
+  transition:
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.navButton:hover .chevron {
+  border-color: #fd8833;
+}
+
+
+/* =========================================================
+   SERVICES DROPDOWN
+========================================================= */
+
+.dropdown {
+  position: absolute;
+
+  top: calc(100% - 3px);
+  right: 0;
+
+  width: 660px;
+
+  padding: 22px 24px;
+
+  background: #ffffff;
+  color: #242424;
+
+  border-radius: 6px;
+
+  box-shadow:
+    0 18px 55px rgba(0, 0, 0, 0.2);
+}
+
+.dropdownParent {
+  display: block;
+
+  margin-bottom: 15px;
+  padding-bottom: 13px;
+
+  border-bottom: 1px solid #ececec;
+
+  color: #fd8833;
+
+  text-decoration: none;
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.dropdownGrid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 2px 24px;
+}
+
+.dropdownLink {
+  display: block;
+
+  padding: 10px 0;
+
+  color: #242424;
+
+  text-decoration: none;
+
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.4;
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.dropdownLink:hover {
+  color: #fd8833;
+  transform: translateX(3px);
+}
+
+
+/* =========================================================
+   MOBILE ELEMENTS — HIDDEN ON DESKTOP/TABLET
+========================================================= */
+
+.mobileToggle {
+  display: none;
+
+  width: 44px;
+  height: 44px;
+
+  padding: 8px;
+
+  border: 0;
+  background: transparent;
+
+  cursor: pointer;
+}
+
+.mobileToggle span {
+  display: block;
+
+  width: 100%;
+  height: 3px;
+
+  margin: 5px 0;
+
+  background: #ffffff;
+
+  border-radius: 20px;
+
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease;
+}
+
+.mobileMenu {
+  display: none;
+}
+
+
+/* =========================================================
+   TABLET — KEEP DESKTOP LAYOUT
+========================================================= */
+
+@media (min-width: 768px) and (max-width: 1100px) {
+
+  .inner {
+    width: min(100% - 36px, 1540px);
+  }
+
+  .topRow {
+    min-height: 120px;
+
+    gap: 18px;
+
+    padding-top: 5px;
+  }
+
+  .brand {
+    gap: 14px;
+  }
+
+  .logoWrap {
+    width: 195px;
+  }
+
+  .tagline {
+    font-size: 13px;
+  }
+
+  .topActions {
+    gap: 14px;
+  }
+
+  .phone {
+    gap: 6px;
+
+    font-size: 13px;
+  }
+
+  .phoneIcon {
+    font-size: 14px;
+  }
+
+  .cta {
+    min-width: 112px;
+
+    padding: 14px 16px;
+
+    font-size: 12px;
+  }
+
+
+  /* TABLET NAV */
+
+  .nav {
+    min-height: 64px;
+
+    padding-bottom: 4px;
+    padding-right: 8px;
+
+    transform: translateY(-10px);
+  }
+
+  .navLink,
+  .navButton {
+    min-height: 64px;
+
+    padding: 0 18px;
+
+    font-size: 15px;
+    font-weight: 500;
+  }
+
+  .navLink::before,
+  .navButton::before {
+    top: 21px;
+    bottom: 21px;
+  }
+
+
+  /* TABLET SOLID CHEVRON */
+
+  .chevron {
+    width: 8px;
+    height: 8px;
+
+    margin-left: 4px;
+    margin-top: -4px;
+
+    font-size: 0;
+
+    border-right-width: 2.5px;
+    border-bottom-width: 2.5px;
+  }
+
+
+  /* TABLET DROPDOWN */
+
+  .dropdown {
+    width: 600px;
+  }
+
+  .dropdownLink {
+    font-size: 12px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE — 767PX AND BELOW
+========================================================= */
+
+@media (max-width: 767px) {
+
+  .header {
+    position: absolute;
+  }
+
+  .inner {
+    width: 100%;
+  }
+
+  .topRow {
+    min-height: 80px;
+
+    padding: 0 16px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    background: rgba(17, 17, 17, 0.97);
+  }
+
+  .brand {
+    min-width: 0;
+
+    margin-right: auto;
+
+    gap: 0;
+  }
+
+  .logoWrap {
+    width: 150px;
+  }
+
+  .tagline {
+    display: none;
+  }
+
+  .topActions {
+    display: flex;
+    align-items: center;
+
+    gap: 0;
+  }
+
+  .topActions .cta {
+    display: none;
+  }
+
+  .phone {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 6px;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    white-space: nowrap;
+  }
+
+  .phoneIcon {
+    color: #fd8833;
+
+    font-size: 14px;
+  }
+
+
+  /* DESKTOP NAV OFF */
+
+  .nav {
+    display: none;
+    transform: none;
+  }
+
+
+  /* MOBILE TOGGLE */
+
+  .mobileToggle {
+    display: block;
+
+    flex-shrink: 0;
+
+    width: 40px;
+    height: 40px;
+
+    padding: 6px;
+  }
+
+  .mobileToggle span {
+    height: 3px;
+
+    margin: 5px 0;
+
+    background: #ffffff;
+
+    border-radius: 10px;
+  }
+
+
+  /* MOBILE MENU */
+
+  .mobileMenu {
+    position: absolute;
+
+    top: 80px;
+    left: 0;
+
+    width: 100%;
+
+    display: block;
+
+    background: #171717;
+
+    border-top:
+      1px solid rgba(255, 255, 255, 0.1);
+
+    box-shadow:
+      0 22px 45px rgba(0, 0, 0, 0.35);
+
+    font-family:
+      var(--font-montserrat),
+      "Montserrat",
+      Arial,
+      sans-serif;
+  }
+
+  .mobileMenu,
+  .mobileMenu *,
+  .mobileMenu button,
+  .mobileMenu a {
+    font-family:
+      var(--font-montserrat),
+      "Montserrat",
+      Arial,
+      sans-serif !important;
+  }
+
+
+  /* MOBILE NAV LINKS */
+
+  .mobileServicesToggle,
+  .mobileNavLink {
+    width: 100%;
+    min-height: 64px;
+
+    padding: 0 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border: 0;
+
+    border-bottom:
+      1px solid rgba(255, 255, 255, 0.1);
+
+    background: transparent;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1;
+
+    letter-spacing: 0.045em;
+
+    text-transform: uppercase;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition:
+      color 0.2s ease,
+      background 0.2s ease;
+  }
+
+  .mobileServicesToggle:hover,
+  .mobileNavLink:hover {
+    color: #fd8833;
+
+    background:
+      rgba(255, 255, 255, 0.025);
+  }
+
+
+  /* MOBILE ARROW */
+
+  .mobileArrow {
+    flex-shrink: 0;
+
+    color: #ffffff;
+
+    transition:
+      transform 0.25s ease,
+      color 0.25s ease;
+  }
+
+  .mobileArrowOpen {
+    transform: rotate(180deg);
+
+    color: #fd8833;
+  }
+
+
+  /* MOBILE SERVICES */
+
+  .mobileServicesList {
+    padding:
+      8px
+      20px
+      18px;
+
+    background: #111111;
+
+    border-bottom:
+      1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .mobileViewAll {
+    display: block;
+
+    padding: 16px 0;
+
+    border-bottom:
+      1px solid rgba(255, 255, 255, 0.09);
+
+    color: #fd8833;
+
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.4;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.035em;
+  }
+
+  .mobileServiceLink {
+    display: block;
+
+    padding: 12px 0;
+
+    color: rgba(255, 255, 255, 0.76);
+
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.45;
+
+    transition:
+      color 0.2s ease,
+      padding-left 0.2s ease;
+  }
+
+  .mobileServiceLink:hover {
+    padding-left: 4px;
+
+    color: #ffffff;
+  }
+
+
+  /* MOBILE BOTTOM */
+
+  .mobileBottom {
+    padding:
+      22px
+      20px
+      26px;
+  }
+
+  .mobileMenuPhone {
+    display: block;
+
+    margin-bottom: 16px;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  .mobileMenuPhone:hover {
+    color: #fd8833;
+  }
+
+  .mobileCTA {
+    width: 100%;
+    min-height: 56px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0 22px;
+
+    background: #fd8833;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.035em;
+
+    border-radius: 4px;
+
+    transition:
+      background 0.2s ease,
+      transform 0.2s ease;
+  }
+
+  .mobileCTA:hover {
+    background: #f6781f;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 390px) {
+
+  .topRow {
+    padding-left: 12px;
+    padding-right: 12px;
+
+    gap: 7px;
+  }
+
+  .logoWrap {
+    width: 132px;
+  }
+
+  .phone {
+    gap: 5px;
+
+    font-size: 11px;
+  }
+
+  .phoneIcon {
+    font-size: 13px;
+  }
+
+  .mobileToggle {
+    width: 36px;
+    height: 36px;
+
+    padding: 5px;
+  }
+
+  .mobileServicesToggle,
+  .mobileNavLink {
+    min-height: 60px;
+
+    padding-left: 18px;
+    padding-right: 18px;
+
+    font-size: 13px;
+  }
+
+  .mobileServicesList {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .mobileBottom {
+    padding:
+      20px
+      18px
+      24px;
+  }
+}

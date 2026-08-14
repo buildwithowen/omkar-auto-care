@@ -1,0 +1,676 @@
+/* =========================================================
+   OMKAR AUTOCARE — LOG BOOK SERVICE INCLUDES
+   Editorial / Premium / Minimal
+========================================================= */
+
+.section {
+  width: 100%;
+
+  padding: 88px 0 98px;
+
+  background: #ffffff;
+
+  color: #222222;
+
+  font-family:
+    var(--font-montserrat),
+    "Montserrat",
+    sans-serif;
+}
+
+
+/* =========================================================
+   OUTER CONTAINER
+========================================================= */
+
+.inner {
+  width: min(calc(100% - 96px), 1540px);
+
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.heading {
+  width: min(100%, 1242px);
+
+  margin: 0 auto 58px;
+}
+
+
+/* =========================================================
+   EYEBROW
+========================================================= */
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 10px;
+
+  margin-bottom: 12px;
+
+  color: #fd8833;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  line-height: 1;
+
+  letter-spacing: 0.2em;
+
+  text-transform: uppercase;
+}
+
+.eyebrow::before {
+  content: "";
+
+  width: 24px;
+  height: 2px;
+
+  background: #fd8833;
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.heading h2 {
+  margin: 0;
+
+  max-width: 720px;
+
+  color: #1f1f1f;
+
+  font-size: clamp(36px, 3vw, 48px);
+
+  font-weight: 600;
+
+  line-height: 1.08;
+
+  letter-spacing: -0.04em;
+}
+
+
+/* =========================================================
+   GRID
+========================================================= */
+
+.grid {
+  width: min(100%, 1242px);
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  column-gap: 80px;
+}
+
+
+/* =========================================================
+   ITEM
+========================================================= */
+
+.item {
+  min-height: 320px;
+
+  display: grid;
+
+  grid-template-columns:
+    46px
+    minmax(0, 1fr);
+
+  gap: 20px;
+
+  padding: 34px 0 38px;
+
+  border-top:
+    1px solid
+    rgba(31, 31, 31, 0.12);
+}
+
+
+/* =========================================================
+   NUMBER
+========================================================= */
+
+.number {
+  padding-top: 5px;
+
+  color: #fd8833;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  line-height: 1.4;
+
+  letter-spacing: 0.12em;
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.content {
+  min-width: 0;
+}
+
+
+/* =========================================================
+   MAIN ITEM TITLE
+========================================================= */
+
+.content h3 {
+  margin: 0;
+
+  color: #252525;
+
+  font-size: 22px;
+  font-weight: 500;
+
+  line-height: 1.25;
+
+  letter-spacing: -0.025em;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.description {
+  max-width: 520px;
+
+  margin: 9px 0 0;
+
+  color: #6d6d6d;
+
+  font-size: 13.5px;
+  font-weight: 400;
+
+  line-height: 1.65;
+}
+
+
+/* =========================================================
+   DETAILS
+========================================================= */
+
+.details {
+  margin-top: 25px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 14px;
+}
+
+
+/* =========================================================
+   DETAIL
+========================================================= */
+
+.detail {
+  position: relative;
+
+  padding-left: 18px;
+}
+
+.detail::before {
+  content: "";
+
+  position: absolute;
+
+  top: 9px;
+  left: 0;
+
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: #fd8833;
+}
+
+
+/* =========================================================
+   DETAIL TITLE
+========================================================= */
+
+.detail h4 {
+  margin: 0;
+
+  color: #2a2a2a;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  line-height: 1.4;
+}
+
+
+/* =========================================================
+   DETAIL COPY
+========================================================= */
+
+.detail p {
+  margin: 3px 0 0;
+
+  color: #707070;
+
+  font-size: 12.5px;
+  font-weight: 400;
+
+  line-height: 1.55;
+}
+
+
+/* =========================================================
+   LARGE DESKTOP
+========================================================= */
+
+@media (min-width: 1600px) {
+
+  .section {
+    padding: 102px 0 112px;
+  }
+
+
+  .inner {
+    width: min(calc(100% - 104px), 1600px);
+  }
+
+
+  .heading,
+  .grid {
+    width: min(100%, 1300px);
+  }
+
+
+  .heading {
+    margin-bottom: 66px;
+  }
+
+
+  .heading h2 {
+    font-size: 52px;
+  }
+
+
+  .grid {
+    column-gap: 96px;
+  }
+
+
+  .item {
+    min-height: 340px;
+
+    grid-template-columns:
+      52px
+      minmax(0, 1fr);
+
+    padding: 38px 0 42px;
+  }
+
+
+  .content h3 {
+    font-size: 23px;
+  }
+
+
+  .description {
+    font-size: 14px;
+  }
+
+
+  .detail h4 {
+    font-size: 15px;
+  }
+
+
+  .detail p {
+    font-size: 13px;
+  }
+}
+
+
+/* =========================================================
+   MACBOOK / NORMAL DESKTOP
+========================================================= */
+
+@media (min-width: 1101px) and (max-width: 1599px) {
+
+  .section {
+    padding: 76px 0 86px;
+  }
+
+
+  .inner {
+    width: min(calc(100% - 96px), 1540px);
+  }
+
+
+  .heading,
+  .grid {
+    width: min(100%, 1242px);
+  }
+
+
+  .heading {
+    margin-bottom: 48px;
+  }
+
+
+  .heading h2 {
+    font-size: clamp(34px, 2.7vw, 42px);
+  }
+
+
+  .grid {
+    column-gap: 72px;
+  }
+
+
+  .item {
+    min-height: 285px;
+
+    grid-template-columns:
+      42px
+      minmax(0, 1fr);
+
+    gap: 18px;
+
+    padding: 30px 0 34px;
+  }
+
+
+  .number {
+    font-size: 10px;
+  }
+
+
+  .content h3 {
+    font-size: 19px;
+  }
+
+
+  .description {
+    margin-top: 7px;
+
+    font-size: 12.5px;
+  }
+
+
+  .details {
+    margin-top: 21px;
+
+    gap: 12px;
+  }
+
+
+  .detail h4 {
+    font-size: 13.5px;
+  }
+
+
+  .detail p {
+    font-size: 12px;
+  }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (min-width: 768px) and (max-width: 1100px) {
+
+  .section {
+    padding: 68px 0 76px;
+  }
+
+
+  .inner {
+    width: min(calc(100% - 40px), 1540px);
+  }
+
+
+  .heading,
+  .grid {
+    width: 100%;
+  }
+
+
+  .heading {
+    margin-bottom: 42px;
+  }
+
+
+  .heading h2 {
+    font-size: clamp(30px, 4vw, 38px);
+  }
+
+
+  .grid {
+    column-gap: 38px;
+  }
+
+
+  .item {
+    min-height: 280px;
+
+    grid-template-columns:
+      34px
+      minmax(0, 1fr);
+
+    gap: 14px;
+
+    padding: 26px 0 30px;
+  }
+
+
+  .number {
+    font-size: 9.5px;
+  }
+
+
+  .content h3 {
+    font-size: 17px;
+  }
+
+
+  .description {
+    font-size: 11.5px;
+  }
+
+
+  .details {
+    margin-top: 18px;
+
+    gap: 11px;
+  }
+
+
+  .detail {
+    padding-left: 15px;
+  }
+
+
+  .detail h4 {
+    font-size: 12.5px;
+  }
+
+
+  .detail p {
+    font-size: 11px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+
+  .section {
+    padding: 58px 0 66px;
+  }
+
+
+  .inner {
+    width: calc(100% - 36px);
+
+    margin: 0 auto;
+  }
+
+
+  .heading {
+    width: 100%;
+
+    margin: 0 0 36px;
+  }
+
+
+  .eyebrow {
+    margin-bottom: 11px;
+
+    font-size: 8.5px;
+
+    letter-spacing: 0.18em;
+  }
+
+
+  .eyebrow::before {
+    width: 20px;
+  }
+
+
+  .heading h2 {
+    font-size: clamp(28px, 7.5vw, 35px);
+
+    line-height: 1.08;
+  }
+
+
+  .grid {
+    width: 100%;
+
+    grid-template-columns: 1fr;
+
+    column-gap: 0;
+  }
+
+
+  .item {
+    min-height: auto;
+
+    grid-template-columns:
+      32px
+      minmax(0, 1fr);
+
+    gap: 13px;
+
+    padding: 24px 0 28px;
+  }
+
+
+  .number {
+    font-size: 9.5px;
+  }
+
+
+  .content h3 {
+    font-size: 18px;
+  }
+
+
+  .description {
+    max-width: 100%;
+
+    margin-top: 7px;
+
+    font-size: 12.5px;
+  }
+
+
+  .details {
+    margin-top: 19px;
+
+    gap: 12px;
+  }
+
+
+  .detail h4 {
+    font-size: 13.5px;
+  }
+
+
+  .detail p {
+    font-size: 12px;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 420px) {
+
+  .section {
+    padding: 52px 0 58px;
+  }
+
+
+  .inner {
+    width: calc(100% - 30px);
+  }
+
+
+  .heading {
+    margin-bottom: 32px;
+  }
+
+
+  .heading h2 {
+    font-size: 27px;
+  }
+
+
+  .item {
+    grid-template-columns:
+      29px
+      minmax(0, 1fr);
+
+    gap: 11px;
+  }
+
+
+  .content h3 {
+    font-size: 17px;
+  }
+
+
+  .description {
+    font-size: 12px;
+  }
+
+
+  .detail h4 {
+    font-size: 13px;
+  }
+
+
+  .detail p {
+    font-size: 11.5px;
+  }
+}

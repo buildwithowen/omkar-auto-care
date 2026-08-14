@@ -1,0 +1,626 @@
+/* =========================================================
+   OMKAR AUTOCARE — TEMPORARY SERVICE PAGE
+   MATCHED TO HERO CONTAINER
+========================================================= */
+
+
+/* =========================================================
+   PAGE
+   Mirrors Hero desktop dimensions
+========================================================= */
+
+.page {
+  position: relative;
+
+  width: 100%;
+
+  min-height: 100svh;
+  height: auto;
+
+  display: flex;
+  align-items: center;
+
+  padding-top: 205px;
+  padding-bottom: 175px;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 82% 82%,
+      rgba(253, 136, 51, 0.09),
+      transparent 34%
+    ),
+    #111111;
+
+  color: #ffffff;
+
+  font-family:
+    var(--font-montserrat),
+    "Montserrat",
+    Arial,
+    sans-serif;
+}
+
+
+/* =========================================================
+   HERO-SIZED CONTAINER
+   EXACTLY MATCHES Hero.module.css .inner WIDTH
+========================================================= */
+
+.content {
+  position: relative;
+  z-index: 2;
+
+  width: min(calc(100% - 96px), 1540px);
+
+  margin: 0 auto;
+
+  text-align: center;
+
+  transform: translateY(5px);
+}
+
+
+/* =========================================================
+   SMALL ORANGE LABEL
+========================================================= */
+
+.eyebrow {
+  display: inline-block;
+
+  margin-bottom: 22px;
+
+  color: #fd8833;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  line-height: 1;
+
+  letter-spacing: 0.22em;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.content h1 {
+  width: min(100%, 900px);
+
+  margin: 0 auto;
+
+  color: #ffffff;
+
+  font-family:
+    var(--font-montserrat),
+    "Montserrat",
+    sans-serif;
+
+  font-size: clamp(42px, 3.7vw, 58px);
+
+  font-weight: 600;
+
+  line-height: 1.08;
+
+  letter-spacing: -0.035em;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.content p {
+  width: min(100%, 700px);
+
+  margin: 26px auto 0;
+
+  color: rgba(255, 255, 255, 0.72);
+
+  font-family:
+    var(--font-montserrat),
+    "Montserrat",
+    sans-serif;
+
+  font-size: 16px;
+  font-weight: 400;
+
+  line-height: 1.7;
+
+  letter-spacing: -0.01em;
+}
+
+
+/* =========================================================
+   ACTIONS
+========================================================= */
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 12px;
+
+  margin-top: 34px;
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.primary,
+.secondary {
+  min-height: 54px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0 28px;
+
+  border-radius: 4px;
+
+  font-family:
+    var(--font-montserrat),
+    "Montserrat",
+    sans-serif;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  line-height: 1;
+
+  text-decoration: none;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.22s ease,
+    border-color 0.22s ease,
+    color 0.22s ease,
+    transform 0.22s ease,
+    box-shadow 0.22s ease;
+}
+
+
+/* =========================================================
+   PRIMARY BUTTON
+========================================================= */
+
+.primary {
+  border: 1px solid #fd8833;
+
+  background: #fd8833;
+
+  color: #ffffff;
+}
+
+.primary:hover {
+  background: #f6781f;
+
+  border-color: #f6781f;
+
+  color: #ffffff;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 10px 26px rgba(253, 136, 51, 0.22);
+}
+
+
+/* =========================================================
+   SECONDARY BUTTON
+========================================================= */
+
+.secondary {
+  border: 1px solid rgba(255, 255, 255, 0.22);
+
+  background: transparent;
+
+  color: #ffffff;
+}
+
+.secondary:hover {
+  border-color: #fd8833;
+
+  color: #fd8833;
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   BACKGROUND GLOW
+========================================================= */
+
+.glow {
+  position: absolute;
+
+  right: -200px;
+  bottom: -250px;
+
+  width: 500px;
+  height: 500px;
+
+  border-radius: 50%;
+
+  background: rgba(253, 136, 51, 0.07);
+
+  filter: blur(30px);
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   LARGE DESKTOP
+   EXACTLY MATCHES HERO LARGE DESKTOP CONTAINER
+========================================================= */
+
+@media (min-width: 1600px) {
+
+  .page {
+    min-height: 100svh;
+    height: auto;
+
+    padding-top: 210px;
+    padding-bottom: 185px;
+  }
+
+  .content {
+    width: min(calc(100% - 104px), 1600px);
+  }
+
+  .content h1 {
+    width: min(100%, 950px);
+
+    font-size: 58px;
+  }
+
+  .content p {
+    width: min(100%, 720px);
+  }
+}
+
+
+/* =========================================================
+   TABLET / SMALL LAPTOP
+   EXACTLY MATCHES HERO TABLET CONTAINER
+========================================================= */
+
+@media (min-width: 768px) and (max-width: 1100px) {
+
+  .page {
+    width: 100%;
+
+    min-height: auto;
+    height: auto;
+
+    display: flex;
+    align-items: center;
+
+    padding-top: 205px;
+    padding-bottom: 175px;
+  }
+
+
+  /* EXACT HERO TABLET WIDTH */
+
+  .content {
+    width: min(calc(100% - 40px), 1540px);
+
+    margin: 0 auto;
+
+    transform: none;
+  }
+
+
+  /* HEADING */
+
+  .content h1 {
+    width: min(100%, 680px);
+
+    font-size:
+      clamp(36px, 4.5vw, 48px);
+
+    font-weight: 600;
+
+    line-height: 1.08;
+
+    letter-spacing: -0.035em;
+  }
+
+
+  /* DESCRIPTION */
+
+  .content p {
+    width: min(100%, 560px);
+
+    margin-top: 18px;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+  }
+
+
+  /* EYEBROW */
+
+  .eyebrow {
+    margin-bottom: 18px;
+
+    font-size: 11px;
+  }
+
+
+  /* ACTIONS */
+
+  .actions {
+    margin-top: 28px;
+  }
+
+
+  /* BUTTONS */
+
+  .primary,
+  .secondary {
+    min-height: 48px;
+
+    padding: 0 22px;
+
+    font-size: 12px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   EXACTLY MATCHES HERO MOBILE CONTAINER
+========================================================= */
+
+@media (max-width: 767px) {
+
+  .page {
+    min-height: auto;
+    height: auto;
+
+    display: flex;
+    align-items: center;
+
+    padding-top: 92px;
+    padding-bottom: 42px;
+  }
+
+
+  /* EXACT HERO MOBILE WIDTH */
+
+  .content {
+    width: calc(100% - 36px);
+
+    margin: 0 auto;
+
+    /*
+      Matches the extra breathing room
+      currently used in your Hero mobile content.
+    */
+    padding-top: 68px;
+
+    transform: none;
+  }
+
+
+  /* EYEBROW */
+
+  .eyebrow {
+    margin-bottom: 16px;
+
+    font-size: 10px;
+
+    letter-spacing: 0.2em;
+  }
+
+
+  /* HEADING */
+
+  .content h1 {
+    width: 100%;
+
+    font-size:
+      clamp(27px, 6.8vw, 36px);
+
+    font-weight: 600;
+
+    line-height: 1.08;
+
+    letter-spacing: -0.035em;
+  }
+
+
+  /* DESCRIPTION */
+
+  .content p {
+    width: 100%;
+
+    margin-top: 18px;
+
+    color: rgba(255, 255, 255, 0.72);
+
+    font-size: 13px;
+
+    line-height: 1.6;
+  }
+
+
+  /* ACTIONS */
+
+  .actions {
+    width: 100%;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+    margin-top: 26px;
+  }
+
+
+  /* BUTTONS */
+
+  .primary,
+  .secondary {
+    width: 100%;
+
+    min-height: 50px;
+
+    padding: 0 18px;
+
+    font-size: 12px;
+  }
+
+
+  /* GLOW */
+
+  .glow {
+    right: -250px;
+    bottom: -220px;
+
+    width: 450px;
+    height: 450px;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   EXACTLY MATCHES HERO SMALL MOBILE WIDTH
+========================================================= */
+
+@media (max-width: 420px) {
+
+  .page {
+    padding-top: 86px;
+    padding-bottom: 36px;
+  }
+
+
+  /* EXACT HERO SMALL MOBILE WIDTH */
+
+  .content {
+    width: calc(100% - 30px);
+
+    padding-top: 68px;
+  }
+
+
+  /* HEADING */
+
+  .content h1 {
+    font-size:
+      clamp(26px, 7.2vw, 30px);
+
+    line-height: 1.08;
+  }
+
+
+  /* DESCRIPTION */
+
+  .content p {
+    margin-top: 16px;
+
+    font-size: 12.5px;
+
+    line-height: 1.55;
+  }
+
+
+  /* EYEBROW */
+
+  .eyebrow {
+    margin-bottom: 14px;
+
+    font-size: 9px;
+  }
+
+
+  /* ACTIONS */
+
+  .actions {
+    margin-top: 24px;
+  }
+
+
+  /* BUTTONS */
+
+  .primary,
+  .secondary {
+    min-height: 48px;
+
+    font-size: 11.5px;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .primary,
+  .secondary {
+    transition: none;
+  }
+}
+
+/* =========================================================
+   CONTACT FORM — SHARED INNER PAGE
+========================================================= */
+
+.contactFormWrap {
+  width: min(100%, 760px);
+
+  margin: 34px auto 0;
+
+  text-align: left;
+}
+
+
+/* TABLET */
+
+@media (min-width: 768px) and (max-width: 1100px) {
+
+  .contactFormWrap {
+    width: min(100%, 680px);
+
+    margin-top: 28px;
+  }
+}
+
+
+/* MOBILE */
+
+@media (max-width: 767px) {
+
+  .contactFormWrap {
+    width: 100%;
+
+    margin-top: 26px;
+  }
+}
+
+
+/* SMALL MOBILE */
+
+@media (max-width: 420px) {
+
+  .contactFormWrap {
+    margin-top: 24px;
+  }
+}

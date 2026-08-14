@@ -1,0 +1,790 @@
+/* =========================================================
+   OMKAR AUTOCARE — CONTACT FORM
+   Compact / Responsive / Expanding Multi-Select
+========================================================= */
+
+.form {
+  position: relative;
+  z-index: 20;
+
+  width: 100%;
+  padding: 0;
+
+  overflow: visible;
+
+  color: #ffffff;
+  background: transparent;
+
+  font-family:
+    var(--font-montserrat),
+    "Montserrat",
+    sans-serif;
+}
+
+
+/* =========================================================
+   FORM GRID
+========================================================= */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 10px 14px;
+
+  margin-bottom: 12px;
+
+  overflow: visible;
+}
+
+
+/* =========================================================
+   FIELDS
+========================================================= */
+
+.field,
+.fieldFull {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 6px;
+
+  min-width: 0;
+
+  overflow: visible;
+}
+
+.fieldFull {
+  grid-column: 1 / -1;
+}
+
+
+/* =========================================================
+   LABELS
+========================================================= */
+
+.field label,
+.fieldFull > label {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-family:
+    var(--font-montserrat),
+    "Montserrat",
+    sans-serif;
+
+  font-size: 13px;
+  font-weight: 500;
+
+  line-height: 1.25;
+}
+
+
+/* =========================================================
+   TEXT INPUTS
+========================================================= */
+
+.field input,
+.fieldFull > input {
+  width: 100%;
+
+  height: 40px;
+  min-height: 40px;
+
+  padding: 7px 11px;
+
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 0;
+
+  background: #ffffff;
+  color: #242424;
+
+  font-family:
+    var(--font-montserrat),
+    "Montserrat",
+    sans-serif;
+
+  font-size: 12px;
+  font-weight: 400;
+
+  outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.field input:focus,
+.fieldFull > input:focus {
+  border-color: #fd8833;
+
+  box-shadow:
+    0 0 0 1px rgba(253, 136, 51, 0.15);
+}
+
+
+/* =========================================================
+   MULTI SELECT WRAPPER
+========================================================= */
+
+.multiSelect {
+  position: relative;
+  z-index: 100;
+
+  width: 100%;
+
+  overflow: visible;
+}
+
+
+/* =========================================================
+   SELECT SERVICES BUTTON
+========================================================= */
+
+.multiSelectButton {
+  width: 100%;
+
+  height: 42px;
+  min-height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 12px;
+
+  padding: 0 12px;
+
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 0;
+
+  background: #ffffff;
+  color: #242424;
+
+  font-family:
+    var(--font-montserrat),
+    "Montserrat",
+    sans-serif;
+
+  font-size: 12px;
+  font-weight: 500;
+
+  line-height: 1;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.multiSelectButton:hover {
+  border-color: #fd8833;
+}
+
+.multiSelectButton:focus-visible {
+  border-color: #fd8833;
+
+  box-shadow:
+    0 0 0 2px rgba(253, 136, 51, 0.16);
+}
+
+
+/* =========================================================
+   ARROW
+========================================================= */
+
+.arrow {
+  width: 16px;
+  height: 16px;
+
+  flex: 0 0 16px;
+
+  color: #242424;
+
+  transition: transform 0.2s ease;
+}
+
+.arrowOpen {
+  transform: rotate(180deg);
+}
+
+
+/* =========================================================
+   SERVICE DROPDOWN
+   IMPORTANT:
+   RELATIVE ON ALL DEVICES.
+   THIS TEMPORARILY EXPANDS THE FORM.
+========================================================= */
+
+.serviceDropdown {
+  position: relative;
+
+  top: auto;
+  left: auto;
+
+  z-index: 1;
+
+  width: 100%;
+
+  margin-top: 6px;
+
+  padding: 7px 9px 9px;
+
+  background: #ffffff;
+
+  border: 1px solid #d8d8d8;
+
+  box-shadow:
+    0 10px 24px rgba(0, 0, 0, 0.18);
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   SINGLE COLUMN SERVICE LIST
+========================================================= */
+
+.serviceGrid {
+  width: 100%;
+  max-height: 210px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 0;
+
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  padding-right: 3px;
+
+  scrollbar-width: thin;
+  scrollbar-color: #bcbcbc transparent;
+}
+
+.serviceGrid::-webkit-scrollbar {
+  width: 5px;
+}
+
+.serviceGrid::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.serviceGrid::-webkit-scrollbar-thumb {
+  background: #c5c5c5;
+
+  border-radius: 20px;
+}
+
+.serviceGrid::-webkit-scrollbar-thumb:hover {
+  background: #999999;
+}
+
+
+/* =========================================================
+   SERVICE ROW
+========================================================= */
+
+.serviceOption {
+  position: relative;
+
+  width: 100%;
+  min-height: 34px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 7px 8px;
+
+  margin: 0;
+
+  background: #ffffff;
+  color: #242424;
+
+  border: 0;
+  border-bottom: 1px solid #eeeeee;
+
+  font-family:
+    var(--font-montserrat),
+    "Montserrat",
+    sans-serif;
+
+  font-size: 11px;
+  font-weight: 500;
+
+  line-height: 1.25;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.18s ease;
+}
+
+.serviceOption:last-child {
+  border-bottom: 0;
+}
+
+.serviceOption:hover {
+  background: #f7f7f7;
+}
+
+
+/* =========================================================
+   SERVICE TEXT
+========================================================= */
+
+.serviceOption span {
+  display: block;
+
+  min-width: 0;
+
+  color: #242424;
+
+  font-family:
+    var(--font-montserrat),
+    "Montserrat",
+    sans-serif;
+
+  font-size: 11px;
+  font-weight: 500;
+
+  line-height: 1.25;
+}
+
+
+/* =========================================================
+   CIRCLE MULTI SELECT
+========================================================= */
+
+.serviceOption input {
+  appearance: none;
+  -webkit-appearance: none;
+
+  position: relative;
+
+  width: 15px;
+  height: 15px;
+
+  min-width: 15px;
+  max-width: 15px;
+
+  flex: 0 0 15px;
+
+  margin: 0;
+  padding: 0;
+
+  background: #ffffff;
+
+  border: 1.5px solid #999999;
+  border-radius: 50%;
+
+  cursor: pointer;
+
+  outline: none;
+
+  transition:
+    border-color 0.18s ease,
+    background-color 0.18s ease;
+}
+
+
+/* =========================================================
+   SELECTED CIRCLE
+========================================================= */
+
+.serviceOption input:checked {
+  border-color: #fd8833;
+}
+
+.serviceOption input:checked::after {
+  content: "";
+
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  width: 7px;
+  height: 7px;
+
+  background: #fd8833;
+
+  border-radius: 50%;
+
+  transform: translate(-50%, -50%);
+}
+
+
+/* =========================================================
+   SELECTED SERVICE ROW
+========================================================= */
+
+.serviceOptionSelected {
+  background: rgba(253, 136, 51, 0.07);
+}
+
+.serviceOptionSelected:hover {
+  background: rgba(253, 136, 51, 0.1);
+}
+
+
+/* =========================================================
+   DONE BUTTON
+========================================================= */
+
+.doneButton {
+  width: 100%;
+
+  height: 34px;
+  min-height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 7px;
+
+  padding: 0 12px;
+
+  border: 0;
+  border-radius: 0;
+
+  background: #242424;
+  color: #ffffff;
+
+  font-family:
+    var(--font-montserrat),
+    "Montserrat",
+    sans-serif;
+
+  font-size: 10px;
+  font-weight: 600;
+
+  line-height: 1;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.18s ease;
+}
+
+.doneButton:hover {
+  background: #fd8833;
+}
+
+
+/* =========================================================
+   MAIN SUBMIT BUTTON
+========================================================= */
+
+.form > button,
+.form > a {
+  width: 100%;
+
+  min-height: 46px;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (min-width: 768px) and (max-width: 1100px) {
+
+  .grid {
+    gap: 9px 12px;
+
+    margin-bottom: 11px;
+  }
+
+  .field,
+  .fieldFull {
+    gap: 5px;
+  }
+
+  .field label,
+  .fieldFull > label {
+    font-size: 12px;
+
+    line-height: 1.25;
+  }
+
+  .field input,
+  .fieldFull > input {
+    height: 38px;
+    min-height: 38px;
+
+    padding: 6px 10px;
+
+    font-size: 11px;
+  }
+
+  .multiSelectButton {
+    height: 40px;
+    min-height: 40px;
+
+    padding: 0 10px;
+
+    font-size: 11px;
+  }
+
+  /*
+    Still relative on tablet.
+    The form temporarily grows.
+  */
+
+  .serviceDropdown {
+    position: relative;
+
+    top: auto;
+    left: auto;
+
+    margin-top: 6px;
+  }
+
+  .serviceGrid {
+    max-height: 190px;
+  }
+
+  .serviceOption {
+    min-height: 32px;
+
+    padding: 6px 7px;
+  }
+
+  .serviceOption span {
+    font-size: 10px;
+  }
+
+  .doneButton {
+    height: 32px;
+    min-height: 32px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   2-COLUMN FIELDS + EXPANDING SERVICE LIST
+========================================================= */
+
+@media (max-width: 767px) {
+
+  .form {
+    overflow: visible;
+  }
+
+  .grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 10px;
+
+    margin-bottom: 12px;
+
+    overflow: visible;
+  }
+
+  .field,
+  .fieldFull {
+    gap: 6px;
+
+    min-width: 0;
+
+    overflow: visible;
+  }
+
+  .fieldFull {
+    grid-column: 1 / -1;
+  }
+
+
+  /* MOBILE LABELS */
+
+  .field label,
+  .fieldFull > label {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: 13px;
+    font-weight: 500;
+
+    line-height: 1.2;
+  }
+
+
+  /* MOBILE INPUTS */
+
+  .field input,
+  .fieldFull > input {
+    width: 100%;
+
+    height: 40px;
+    min-height: 40px;
+
+    padding: 7px 9px;
+
+    font-size: 11px;
+  }
+
+
+  /* MULTI SELECT */
+
+  .multiSelect {
+    position: relative;
+
+    z-index: 1000;
+
+    width: 100%;
+
+    overflow: visible;
+  }
+
+
+  /* SELECT BUTTON */
+
+  .multiSelectButton {
+    width: 100%;
+
+    height: 42px;
+    min-height: 42px;
+
+    padding: 0 10px;
+
+    font-size: 11px;
+  }
+
+
+  /* EXPANDING DROPDOWN */
+
+  .serviceDropdown {
+    position: relative;
+
+    top: auto;
+    left: auto;
+
+    z-index: 1;
+
+    width: 100%;
+
+    margin-top: 6px;
+
+    padding: 7px 9px 9px;
+  }
+
+
+  /* SERVICE LIST */
+
+  .serviceGrid {
+    max-height: 190px;
+  }
+
+
+  /* SERVICE ROW */
+
+  .serviceOption {
+    min-height: 34px;
+
+    gap: 9px;
+
+    padding: 7px 8px;
+  }
+
+  .serviceOption span {
+    font-size: 10px;
+  }
+
+
+  /* CIRCLE */
+
+  .serviceOption input {
+    width: 15px;
+    height: 15px;
+
+    min-width: 15px;
+    max-width: 15px;
+
+    flex-basis: 15px;
+  }
+
+
+  /* DONE */
+
+  .doneButton {
+    height: 34px;
+    min-height: 34px;
+  }
+
+
+  /* SUBMIT */
+
+  .form > button,
+  .form > a {
+    min-height: 46px;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 420px) {
+
+  .grid {
+    grid-template-columns: 1fr;
+
+    gap: 9px;
+  }
+
+  .fieldFull {
+    grid-column: auto;
+  }
+
+  .field,
+  .fieldFull {
+    gap: 6px;
+  }
+
+  .field label,
+  .fieldFull > label {
+    font-size: 13px;
+  }
+
+  .field input,
+  .fieldFull > input {
+    height: 39px;
+    min-height: 39px;
+  }
+
+  .multiSelectButton {
+    height: 41px;
+    min-height: 41px;
+  }
+
+  .serviceGrid {
+    max-height: 175px;
+  }
+
+  .serviceOption {
+    min-height: 33px;
+
+    padding: 6px 7px;
+  }
+
+  .serviceOption span {
+    font-size: 10px;
+  }
+}

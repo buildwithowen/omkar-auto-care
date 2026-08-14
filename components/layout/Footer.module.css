@@ -1,0 +1,549 @@
+/* =========================================================
+   OMKAR AUTOCARE
+   PREMIUM FOOTER
+========================================================= */
+
+.footer {
+  width: 100%;
+  background: #171717;
+  color: #ffffff;
+
+  font-family:
+    var(--font-montserrat),
+    "Montserrat",
+    sans-serif;
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.inner {
+  width: min(calc(100% - 96px), 1540px);
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.main {
+  display: grid;
+
+  grid-template-columns:
+    minmax(300px, 1.35fr)
+    minmax(160px, 0.7fr)
+    minmax(180px, 0.8fr)
+    minmax(260px, 1fr);
+
+  gap: 72px;
+
+  padding: 82px 0 72px;
+}
+
+
+/* =========================================================
+   BRAND
+========================================================= */
+
+.brand {
+  max-width: 400px;
+}
+
+.logoLink {
+  display: inline-block;
+  margin-bottom: 28px;
+}
+
+.logo {
+  display: block;
+
+  width: 200px;
+  height: auto;
+
+  object-fit: contain;
+}
+
+.brandText {
+  max-width: 380px;
+
+  margin: 0;
+
+  color: rgba(255, 255, 255, 0.62);
+
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.75;
+}
+
+.brandPhone {
+  display: inline-block;
+
+  margin-top: 27px;
+
+  color: #fd8833;
+
+  font-size: 20px;
+  font-weight: 650;
+  line-height: 1.2;
+
+  text-decoration: none;
+
+  transition: color 0.2s ease;
+}
+
+.brandPhone:hover {
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   COLUMNS
+========================================================= */
+
+.column {
+  min-width: 0;
+}
+
+.columnLabel {
+  display: block;
+
+  margin-bottom: 25px;
+
+  color: #ffffff;
+
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   LINKS
+========================================================= */
+
+.links {
+  display: flex;
+  flex-direction: column;
+
+  gap: 14px;
+}
+
+.links a {
+  width: fit-content;
+
+  color: rgba(255, 255, 255, 0.64);
+
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.45;
+
+  text-decoration: none;
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.links a:hover {
+  color: #fd8833;
+  transform: translateX(3px);
+}
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact {
+  display: flex;
+  flex-direction: column;
+
+  gap: 13px;
+}
+
+.contact > a {
+  width: fit-content;
+
+  color: rgba(255, 255, 255, 0.72);
+
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.45;
+
+  text-decoration: none;
+
+  transition: color 0.2s ease;
+}
+
+.contact > a:hover {
+  color: #fd8833;
+}
+
+
+/* =========================================================
+   WORKING HOURS
+========================================================= */
+
+.hours {
+  margin-top: 18px;
+}
+
+.hours p {
+  margin: 0 0 9px;
+
+  color: rgba(255, 255, 255, 0.5);
+
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.55;
+}
+
+
+/* =========================================================
+   BOTTOM BAR
+========================================================= */
+
+.bottom {
+  min-height: 78px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 30px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.bottom p {
+  margin: 0;
+
+  color: rgba(255, 255, 255, 0.42);
+
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.bottom a {
+  color: rgba(255, 255, 255, 0.72);
+
+  font-weight: 650;
+
+  text-decoration: none;
+
+  transition: color 0.2s ease;
+}
+
+.bottom a:hover {
+  color: #fd8833;
+}
+
+
+/* =========================================================
+   LARGE DESKTOP
+   1600PX+
+========================================================= */
+
+@media (min-width: 1600px) {
+
+  .inner {
+    width: min(calc(100% - 110px), 1600px);
+  }
+
+  .main {
+    grid-template-columns:
+      minmax(320px, 1.4fr)
+      minmax(170px, 0.7fr)
+      minmax(190px, 0.8fr)
+      minmax(280px, 1fr);
+
+    gap: 88px;
+
+    padding: 92px 0 78px;
+  }
+
+  .brand {
+    max-width: 420px;
+  }
+
+  .logo {
+    width: 215px;
+  }
+
+  .brandText {
+    max-width: 400px;
+
+    font-size: 16px;
+  }
+
+  .brandPhone {
+    font-size: 21px;
+  }
+
+  .columnLabel {
+    font-size: 13px;
+  }
+
+  .links a,
+  .contact > a {
+    font-size: 16px;
+  }
+
+  .hours p {
+    font-size: 15px;
+  }
+
+  .bottom {
+    min-height: 82px;
+  }
+
+  .bottom p {
+    font-size: 13px;
+  }
+}
+
+
+/* =========================================================
+   NORMAL DESKTOP / MACBOOK
+   1101PX – 1599PX
+========================================================= */
+
+@media (min-width: 1101px) and (max-width: 1599px) {
+
+  .main {
+    grid-template-columns:
+      minmax(280px, 1.25fr)
+      minmax(150px, 0.65fr)
+      minmax(170px, 0.7fr)
+      minmax(250px, 0.95fr);
+
+    gap: 56px;
+
+    padding: 72px 0 62px;
+  }
+
+  .logo {
+    width: 190px;
+  }
+
+  .logoLink {
+    margin-bottom: 24px;
+  }
+
+  .brandText {
+    font-size: 14px;
+  }
+
+  .brandPhone {
+    margin-top: 23px;
+
+    font-size: 19px;
+  }
+
+  .columnLabel {
+    margin-bottom: 22px;
+
+    font-size: 11px;
+  }
+
+  .links {
+    gap: 12px;
+  }
+
+  .links a,
+  .contact > a {
+    font-size: 14px;
+  }
+
+  .hours p {
+    font-size: 13px;
+  }
+
+  .bottom {
+    min-height: 72px;
+  }
+
+  .bottom p {
+    font-size: 11.5px;
+  }
+}
+
+
+/* =========================================================
+   TABLET
+   768PX – 1100PX
+========================================================= */
+
+@media (min-width: 768px) and (max-width: 1100px) {
+
+  .inner {
+    width: min(calc(100% - 48px), 1540px);
+  }
+
+  .main {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 50px 58px;
+
+    padding: 62px 0 56px;
+  }
+
+  .brand {
+    max-width: 350px;
+  }
+
+  .logo {
+    width: 185px;
+  }
+
+  .brandText {
+    font-size: 14px;
+  }
+
+  .brandPhone {
+    font-size: 18px;
+  }
+
+  .columnLabel {
+    font-size: 11px;
+  }
+
+  .links a,
+  .contact > a {
+    font-size: 14px;
+  }
+
+  .hours p {
+    font-size: 13px;
+  }
+
+  .bottom {
+    min-height: 72px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   BELOW 768PX
+========================================================= */
+
+@media (max-width: 767px) {
+
+  .inner {
+    width: calc(100% - 36px);
+    margin: 0 auto;
+  }
+
+  .main {
+    grid-template-columns: 1fr;
+
+    gap: 42px;
+
+    padding: 54px 0 48px;
+  }
+
+  .brand {
+    max-width: 100%;
+  }
+
+  .logoLink {
+    margin-bottom: 22px;
+  }
+
+  .logo {
+    width: 175px;
+  }
+
+  .brandText {
+    max-width: 100%;
+
+    font-size: 13.5px;
+    line-height: 1.7;
+  }
+
+  .brandPhone {
+    margin-top: 21px;
+
+    font-size: 18px;
+  }
+
+  .columnLabel {
+    margin-bottom: 19px;
+
+    font-size: 11px;
+  }
+
+  .links {
+    gap: 11px;
+  }
+
+  .links a,
+  .contact > a {
+    font-size: 13.5px;
+  }
+
+  .hours {
+    margin-top: 15px;
+  }
+
+  .hours p {
+    margin-bottom: 7px;
+
+    font-size: 12.5px;
+  }
+
+  .bottom {
+    min-height: auto;
+
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 8px;
+
+    padding: 22px 0 26px;
+  }
+
+  .bottom p {
+    font-size: 11px;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   BELOW 420PX
+========================================================= */
+
+@media (max-width: 420px) {
+
+  .inner {
+    width: calc(100% - 30px);
+  }
+
+  .main {
+    gap: 38px;
+
+    padding: 48px 0 44px;
+  }
+
+  .logo {
+    width: 165px;
+  }
+
+  .brandText {
+    font-size: 13px;
+  }
+
+  .brandPhone {
+    font-size: 17px;
+  }
+}
