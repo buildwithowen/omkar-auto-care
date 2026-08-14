@@ -7,10 +7,6 @@
 
   width: 100%;
 
-  /*
-    Normal state fills screen.
-    If contact form expands, Hero can grow taller.
-  */
   min-height: 100svh;
   height: auto;
 
@@ -22,24 +18,31 @@
 
   overflow: visible;
 
-  background-image:
-    linear-gradient(
-      90deg,
-      rgba(10, 10, 10, 0.88) 0%,
-      rgba(10, 10, 10, 0.80) 48%,
-      rgba(10, 10, 10, 0.68) 100%
-    ),
-    url("/images/hero/omkar-autocare-hero-bg.webp");
-
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-
   background-color: #111111;
 
   transition:
     min-height 0.25s ease,
     padding-bottom 0.25s ease;
+}
+
+
+/* =========================================================
+   OPTIMIZED HERO BACKGROUND
+========================================================= */
+
+.heroBackground {
+  position: absolute !important;
+  inset: 0;
+
+  width: 100% !important;
+  height: 100% !important;
+
+  object-fit: cover;
+  object-position: center;
+
+  z-index: 0;
+
+  pointer-events: none;
 }
 
 
@@ -53,11 +56,18 @@
 
   z-index: 1;
 
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0.02) 0%,
-    rgba(0, 0, 0, 0.10) 100%
-  );
+  background:
+    linear-gradient(
+      90deg,
+      rgba(10, 10, 10, 0.88) 0%,
+      rgba(10, 10, 10, 0.80) 48%,
+      rgba(10, 10, 10, 0.68) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.02) 0%,
+      rgba(0, 0, 0, 0.10) 100%
+    );
 
   pointer-events: none;
 }
@@ -279,7 +289,6 @@
 
 /* =========================================================
    TABLET / SMALL LAPTOP
-   KEEP DESKTOP STRUCTURE
 ========================================================= */
 
 @media (min-width: 768px) and (max-width: 1100px) {
@@ -287,10 +296,6 @@
   .hero {
     width: 100%;
 
-    /*
-      Compact normally,
-      but expands naturally when form opens.
-    */
     min-height: auto;
     height: auto;
 
@@ -301,8 +306,11 @@
     padding-bottom: 175px;
 
     overflow: visible;
+  }
 
-    background-position: center;
+
+  .heroBackground {
+    object-position: center;
   }
 
 
@@ -414,8 +422,11 @@
 
     padding-top: 92px;
     padding-bottom: 42px;
+  }
 
-    background-position: center;
+
+  .heroBackground {
+    object-position: center;
   }
 
 
@@ -432,19 +443,14 @@
   }
 
 
-  @media (max-width: 767px) {
-
   .content {
     max-width: 100%;
 
-    /* More breathing room below header */
     padding-top: 68px;
   }
 
-}
 
-
-  /* MOBILE H1 — 2 ROWS */
+  /* MOBILE H1 */
 
   .content h1 {
     width: 100%;
