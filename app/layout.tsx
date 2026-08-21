@@ -8,7 +8,7 @@ import PreFooterCTA from "@/components/layout/PreFooterCTA";
 
 import Footer from "@/components/layout/Footer";
 
-import ContactPopup from "@/components/forms/ContactPopup";
+import LazyContactPopup from "@/components/forms/LazyContactPopup";
 
 import SiteChrome from "@/components/layout/SiteChrome";
 
@@ -64,7 +64,7 @@ export default function RootLayout({
           header={<Header />}
           preFooter={<PreFooterCTA />}
           footer={<Footer />}
-          contactPopup={<ContactPopup />}
+          contactPopup={<LazyContactPopup />}
         >
           {children}
         </SiteChrome>

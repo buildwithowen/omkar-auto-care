@@ -25,8 +25,12 @@ const services = [
   "Safety Check Inspection",
 ];
 
-export default function ContactPopup() {
-  const [open, setOpen] = useState(false);
+export default function ContactPopup({
+  initialOpen = false,
+}: {
+  initialOpen?: boolean;
+}) {
+  const [open, setOpen] = useState(initialOpen);
   const [servicesOpen, setServicesOpen] = useState(false);
   const [selectedServices, setSelectedServices] = useState<string[]>([]);
 
