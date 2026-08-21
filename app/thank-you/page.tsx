@@ -1,76 +1,106 @@
+import type { Metadata } from "next";
+
+import Image from "next/image";
+
+import Link from "next/link";
+
+import styles from "./page.module.css";
+
+
+/* =========================================================
+   PAGE METADATA
+========================================================= */
+
+export const metadata: Metadata = {
+  title: "Enquiry Received",
+
+  description:
+    "Your enquiry has been received by OMKAR Autocare.",
+
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
+
+
+/* =========================================================
+   THANK YOU PAGE
+========================================================= */
+
 export default function ThankYouPage() {
   return (
-    <main
-      style={{
-        minHeight: "100vh",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        padding: "40px 20px",
-        background: "#f7f7f5",
-        fontFamily: "Arial, sans-serif",
-      }}
-    >
-      <div
-        style={{
-          width: "100%",
-          maxWidth: "700px",
-          textAlign: "center",
-        }}
-      >
-        <p
-          style={{
-            margin: "0 0 12px",
-            color: "#fd8833",
-            fontSize: "13px",
-            fontWeight: 700,
-            letterSpacing: "0.16em",
-          }}
-        >
-          THANK YOU
-        </p>
+    <main className={styles.page}>
+      <div className={styles.content}>
+        {/* COMPANY LOGO */}
 
-        <h1
-          style={{
-            margin: 0,
-            color: "#1f1f1f",
-            fontSize: "clamp(36px, 6vw, 58px)",
-            lineHeight: 1.08,
-          }}
+        <Link
+          href="/"
+          className={styles.logoLink}
+          aria-label="Return to OMKAR Autocare homepage"
         >
-          We&apos;ve received your enquiry.
+          <Image
+            src="/images/omkar-autocare-logo.png"
+            alt="OMKAR Autocare"
+            width={260}
+            height={114}
+            priority
+            className={styles.logo}
+          />
+        </Link>
+
+
+        {/* SUCCESS INDICATOR */}
+
+        <div
+          className={styles.successMark}
+          aria-hidden="true"
+        >
+          <span className={styles.checkmark} />
+        </div>
+
+
+        {/* CONFIRMATION */}
+
+        <span className={styles.eyebrow}>
+          ENQUIRY RECEIVED
+        </span>
+
+        <h1>
+          Your request
+          <br />
+
+          <span>
+            has been received.
+          </span>
         </h1>
 
-        <p
-          style={{
-            margin: "22px auto 0",
-            maxWidth: "560px",
-            color: "#666666",
-            fontSize: "16px",
-            lineHeight: 1.7,
-          }}
-        >
-          The OMKAR Autocare team will get back to you as soon as possible.
+        <p className={styles.message}>
+          Thank you for contacting OMKAR Autocare.
+          We will review your enquiry and get back to you
+          as soon as possible.
         </p>
 
-        <a
+
+        {/* URGENT PHONE CONTACT */}
+
+        <p className={styles.urgent}>
+          Need help sooner? Call{" "}
+
+          <a href="tel:0430729392">
+            0430 729 392
+          </a>
+        </p>
+
+
+        {/* QUIET HOMEPAGE LINK */}
+
+        <Link
           href="/"
-          style={{
-            display: "inline-flex",
-            marginTop: "30px",
-            minHeight: "50px",
-            alignItems: "center",
-            justifyContent: "center",
-            padding: "0 24px",
-            background: "#fd8833",
-            color: "#ffffff",
-            textDecoration: "none",
-            fontSize: "14px",
-            fontWeight: 700,
-          }}
+          className={styles.homeLink}
         >
-          Back to Home
-        </a>
+          Return to homepage
+        </Link>
       </div>
     </main>
   );

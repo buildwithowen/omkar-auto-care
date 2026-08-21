@@ -1,14 +1,171 @@
 import type { Metadata } from "next";
-import TemporaryServicePage from "@/components/shared/TemporaryServicePage";
+import Image from "next/image";
+
+import ContactForm from "@/components/forms/ContactForm";
+import ServiceProcessBar from "@/components/home/ServiceProcessBar";
+import ServiceDetailsSection from "@/components/services/ServiceDetailsSection";
+import ServiceChecklistSection from "@/components/services/ServiceChecklistSection";
+import TopTierServicesSection from "@/components/home/TopTierServicesSection";
+import ServiceStripSection from "@/components/home/ServiceStripSection";
+import HomeContactSection from "@/components/home/HomeContactSection";
+import WhyChooseUsSection from "@/components/home/WhyChooseUsSection";
+
+import styles from "@/components/home/Hero.module.css";
+
+
+/* =========================================================
+   GOOGLE REVIEWS
+========================================================= */
+
+const GOOGLE_REVIEWS_URL = "https://share.google/r8DdLR7WgoDlcMfvd";
+
+const GOOGLE_RATING = "5.0";
+
+const GOOGLE_REVIEW_COUNT = 71;
+
+
+/* =========================================================
+   PAGE METADATA
+========================================================= */
 
 export const metadata: Metadata = {
-  title: "Suspension & Shock Absorbers | Omkar Autocare",
+  title: "Suspension & Shock Absorbers",
+
+  description: "Feeling every bump in the road? Omkar Autocare diagnoses and repairs worn suspension and shock absorbers.",
+
   robots: {
     index: false,
     follow: true,
   },
 };
 
-export default function SuspensionShockAbsorbersPage() {
-  return <TemporaryServicePage title="Suspension & Shock Absorbers" />;
+
+/* =========================================================
+   SUSPENSION & SHOCK ABSORBERS PAGE
+========================================================= */
+
+export default function ServicePage() {
+  return (
+    <>
+      <section className={styles.hero}>
+      {/* OPTIMISED SERVICE BACKGROUND */}
+      <Image
+        src="/images/services/omkar-autocare-suspension-shock-absorbers.webp"
+        alt=""
+        fill
+        priority
+        fetchPriority="high"
+        quality={60}
+        sizes="100vw"
+        className={styles.heroBackground}
+      />
+
+      {/* DARK OVERLAY */}
+      <div className={styles.overlay} />
+
+      <div className={styles.inner}>
+        {/* LEFT CONTENT */}
+        <div className={styles.content}>
+          <h1>
+            Car bouncing or knocking?
+            <br />
+
+            <span
+              style={{
+                color: "#fd8833",
+                whiteSpace: "normal",
+              }}
+            >
+              Suspension Repairs.
+            </span>
+          </h1>
+
+          <p>Worn suspension can reduce vehicle control, increase braking distances and accelerate tyre wear.</p>
+
+          {/* GOOGLE REVIEWS */}
+          <a
+            href={GOOGLE_REVIEWS_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.reviews}
+            aria-label="Rated 5.0 out of 5 based on 71 Google reviews. Open Google Business Profile."
+          >
+            <span
+              className={styles.googleWordmark}
+              aria-hidden="true"
+            >
+              <span>G</span>
+              <span>o</span>
+              <span>o</span>
+              <span>g</span>
+              <span>l</span>
+              <span>e</span>
+            </span>
+
+            <span className={styles.reviewTop}>
+              <span className={styles.rating}>
+                {GOOGLE_RATING}
+              </span>
+
+              <span
+                className={styles.stars}
+                aria-hidden="true"
+              >
+                ★★★★★
+              </span>
+            </span>
+
+            <span className={styles.reviewCaption}>
+              Based on{" "}
+              <span className={styles.reviewCount}>
+                {GOOGLE_REVIEW_COUNT}
+              </span>{" "}
+              Google reviews
+            </span>
+          </a>
+        </div>
+
+        {/* RIGHT CONTACT FORM */}
+        <div className={styles.formWrap}>
+          <ContactForm />
+        </div>
+      </div>
+
+      {/* BOTTOM SERVICE PROCESS BAR */}
+      <ServiceProcessBar />
+    </section>
+
+      <ServiceDetailsSection
+        imageSrc="/images/services/omkar-autocare-suspension-shock-absorbers.webp"
+        imageLabel="SUSPENSION & SHOCK ABSORBERS"
+        eyebrow="CONTROL STARTS WITH YOUR SUSPENSION"
+        heading="Worn shocks affect more than comfort."
+        description="Damaged suspension components can affect steering, braking and tyre wear. Problems often become more noticeable when driving over bumps or around corners."
+        points={[
+          {
+            title: "Knocking or clunking over bumps",
+            description: "Unusual noises may indicate worn suspension components.",
+          },
+          {
+            title: "Excessive bouncing or body roll",
+            description: "Weak shock absorbers can reduce stability and vehicle control.",
+          },
+          {
+            title: "Uneven or accelerated tyre wear",
+            description: "Suspension problems can affect tyre contact and handling.",
+          },
+        ]}
+      />
+
+      <ServiceChecklistSection service="suspension-shock-absorbers" />
+
+      <TopTierServicesSection />
+
+      <ServiceStripSection />
+
+      <HomeContactSection />
+
+      <WhyChooseUsSection />
+    </>
+  );
 }

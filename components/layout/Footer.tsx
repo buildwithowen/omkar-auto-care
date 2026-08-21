@@ -1,35 +1,90 @@
 import Image from "next/image";
 import Link from "next/link";
+
 import styles from "./Footer.module.css";
 
+
+/* =========================================================
+   COMPANY NAVIGATION
+========================================================= */
+
 const companyLinks = [
-  { label: "Home", href: "/" },
-  { label: "Services & Repairs", href: "/services" },
-  { label: "FAQ", href: "/faq" },
-  { label: "About", href: "/about" },
-  { label: "Contact", href: "/contact" },
+  {
+    label: "Home",
+    href: "/",
+  },
+
+
+  {
+    label: "FAQ",
+    href: "/faq",
+  },
+
+  {
+    label: "About",
+    href: "/about",
+  },
+
+  {
+    label: "Contact",
+    href: "/contact",
+  },
 ];
 
+
+/* =========================================================
+   ACTIVE SERVICE PAGES
+========================================================= */
+
 const serviceLinks = [
-  { label: "Log Book Service", href: "/services/log-book-service" },
-  { label: "Major Service", href: "/services/major-service" },
-  { label: "Brake Systems", href: "/services/brake-systems" },
-  { label: "Auto Electrical", href: "/services/auto-electrical" },
-  { label: "Cooling Systems", href: "/services/cooling-systems" },
+  {
+    label: "Accessories & Audio",
+    href: "/accessories-audio",
+  },
+
+  {
+    label: "Brake Systems",
+    href: "/brake-systems",
+  },
+
+  {
+    label: "Engine",
+    href: "/engine",
+  },
+
+  {
+    label: "Minor Service",
+    href: "/minor-service",
+  },
+
+  {
+    label: "Serpentine & Timing Belt",
+    href: "/serpentine-timing-belt",
+  },
+
+  {
+    label: "Suspension & Shock Absorbers",
+    href: "/suspension-shock-absorbers",
+  },
 ];
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
 
 export default function Footer() {
   return (
     <footer className={styles.footer}>
       <div className={styles.inner}>
         <div className={styles.main}>
-
           {/* BRAND */}
+
           <div className={styles.brand}>
             <Link
               href="/"
               className={styles.logoLink}
-              aria-label="OMKAR Autocare Home"
+              aria-label="OMKAR Autocare homepage"
             >
               <Image
                 src="/images/omkar-autocare-logo.png"
@@ -48,12 +103,15 @@ export default function Footer() {
             <a
               href="tel:0430729392"
               className={styles.brandPhone}
+              aria-label="Call OMKAR Autocare on 0430 729 392"
             >
               0430 729 392
             </a>
           </div>
 
-          {/* COMPANY */}
+
+          {/* COMPANY NAVIGATION */}
+
           <div className={styles.column}>
             <span className={styles.columnLabel}>
               Company
@@ -65,7 +123,7 @@ export default function Footer() {
             >
               {companyLinks.map((link) => (
                 <Link
-                  key={link.label}
+                  key={link.href}
                   href={link.href}
                 >
                   {link.label}
@@ -74,7 +132,9 @@ export default function Footer() {
             </nav>
           </div>
 
-          {/* SERVICES */}
+
+          {/* SERVICE NAVIGATION */}
+
           <div className={styles.column}>
             <span className={styles.columnLabel}>
               Services
@@ -82,11 +142,11 @@ export default function Footer() {
 
             <nav
               className={styles.links}
-              aria-label="Footer services navigation"
+              aria-label="Footer service navigation"
             >
               {serviceLinks.map((link) => (
                 <Link
-                  key={link.label}
+                  key={link.href}
                   href={link.href}
                 >
                   {link.label}
@@ -95,18 +155,26 @@ export default function Footer() {
             </nav>
           </div>
 
-          {/* CONTACT */}
+
+          {/* CONTACT INFORMATION */}
+
           <div className={styles.column}>
             <span className={styles.columnLabel}>
               Contact
             </span>
 
             <div className={styles.contact}>
-              <a href="tel:0430729392">
+              <a
+                href="tel:0430729392"
+                aria-label="Call OMKAR Autocare"
+              >
                 0430 729 392
               </a>
 
-              <a href="mailto:info@omkarautocare.com.au">
+              <a
+                href="mailto:info@omkarautocare.com.au"
+                aria-label="Email OMKAR Autocare"
+              >
                 info@omkarautocare.com.au
               </a>
 
@@ -125,10 +193,11 @@ export default function Footer() {
               </div>
             </div>
           </div>
-
         </div>
 
+
         {/* BOTTOM BAR */}
+
         <div className={styles.bottom}>
           <p>
             © 2026 OMKAR Autocare. All Rights Reserved.
@@ -136,6 +205,7 @@ export default function Footer() {
 
           <p>
             Website by{" "}
+
             <a
               href="https://ausmovestaffsolutions.com.au/"
               target="_blank"

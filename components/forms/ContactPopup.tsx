@@ -1,5 +1,7 @@
 "use client";
 
+import { useContactSubmission } from "@/components/forms/useContactSubmission";
+
 import { useEffect, useRef, useState } from "react";
 import styles from "./ContactPopup.module.css";
 
@@ -27,6 +29,12 @@ export default function ContactPopup() {
   const [open, setOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   const [selectedServices, setSelectedServices] = useState<string[]>([]);
+
+  const {
+    handleSubmit,
+    isSubmitting,
+    submissionError,
+  } = useContactSubmission(selectedServices);
 
   const selectorRef = useRef<HTMLDivElement>(null);
 
@@ -110,7 +118,10 @@ export default function ContactPopup() {
           </p>
         </div>
 
-        <form className={styles.form}>
+        <form
+      className={styles.form}
+      onSubmit={handleSubmit}
+    >
           <div className={styles.grid}>
             <div className={styles.field}>
               <label htmlFor="popup-name">Full Name</label>
@@ -205,10 +216,29 @@ export default function ContactPopup() {
             </div>
           </div>
 
-          <button type="submit" className={styles.submit}>
-            Submit
+          <button
+            type="submit"
+            className={styles.submit}
+            disabled={isSubmitting}
+          >
+            {isSubmitting ? "Sending..." : "Submit"}
           </button>
-        </form>
+        
+      {submissionError && (
+        <p
+          role="alert"
+          style={{
+            margin: "12px 0 0",
+            color: "#ffb4a8",
+            fontSize: "12px",
+            lineHeight: "1.6",
+          }}
+        >
+          {submissionError}
+        </p>
+      )}
+
+    </form>
       </div>
     </div>
   );

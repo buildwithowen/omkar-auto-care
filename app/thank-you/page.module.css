@@ -1,0 +1,386 @@
+/* =========================================================
+   OMKAR AUTOCARE — DISTRACTION-FREE THANK YOU PAGE
+========================================================= */
+
+.page {
+  position: relative;
+
+  width: 100%;
+  min-height: 100svh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 56px 24px;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      ellipse at 50% 42%,
+      rgba(253, 136, 51, 0.065) 0%,
+      rgba(17, 17, 17, 0) 47%
+    ),
+    #111111;
+
+  color: #ffffff;
+
+  font-family:
+    var(--font-montserrat),
+    "Montserrat",
+    sans-serif;
+}
+
+
+/* =========================================================
+   CENTERED CONTENT
+========================================================= */
+
+.content {
+  width: 100%;
+  max-width: 600px;
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   COMPANY LOGO
+========================================================= */
+
+.logoLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 40px;
+}
+
+.logo {
+  width: 220px;
+  height: auto;
+
+  object-fit: contain;
+}
+
+
+/* =========================================================
+   SUCCESS INDICATOR
+========================================================= */
+
+.successMark {
+  width: 58px;
+  height: 58px;
+
+  margin: 0 auto 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(253, 136, 51, 0.46);
+  border-radius: 50%;
+
+  background-color: rgba(253, 136, 51, 0.07);
+}
+
+.checkmark {
+  width: 15px;
+  height: 26px;
+
+  margin-top: -5px;
+
+  border-right: 2px solid #fd8833;
+  border-bottom: 2px solid #fd8833;
+
+  transform: rotate(45deg);
+}
+
+
+/* =========================================================
+   EYEBROW
+========================================================= */
+
+.eyebrow {
+  display: inline-block;
+
+  color: #fd8833;
+
+  font-size: 10px;
+  font-weight: 600;
+
+  line-height: 1.5;
+
+  letter-spacing: 0.15em;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   CONFIRMATION HEADING
+========================================================= */
+
+.content h1 {
+  margin: 15px 0 0;
+
+  color: #ffffff;
+
+  font-size: clamp(40px, 4vw, 58px);
+  font-weight: 600;
+
+  line-height: 1.09;
+
+  letter-spacing: -0.045em;
+}
+
+.content h1 span {
+  color: #fd8833;
+}
+
+
+/* =========================================================
+   CONFIRMATION MESSAGE
+========================================================= */
+
+.message {
+  max-width: 470px;
+
+  margin: 19px auto 0;
+
+  color: rgba(255, 255, 255, 0.74);
+
+  font-size: 14px;
+  font-weight: 400;
+
+  line-height: 1.75;
+}
+
+
+/* =========================================================
+   URGENT PHONE NUMBER
+========================================================= */
+
+.urgent {
+  margin: 25px 0 0;
+
+  color: rgba(255, 255, 255, 0.61);
+
+  font-size: 12px;
+  font-weight: 400;
+
+  line-height: 1.7;
+}
+
+.urgent a {
+  color: #ffffff;
+
+  font-weight: 600;
+
+  text-decoration: none;
+
+  transition: color 0.2s ease;
+}
+
+.urgent a:hover {
+  color: #fd8833;
+}
+
+
+/* =========================================================
+   QUIET RETURN LINK
+========================================================= */
+
+.homeLink {
+  display: inline-block;
+
+  margin-top: 21px;
+
+  color: rgba(255, 255, 255, 0.52);
+
+  font-size: 11.5px;
+  font-weight: 400;
+
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+
+  transition: color 0.2s ease;
+}
+
+.homeLink:hover {
+  color: #fd8833;
+}
+
+
+/* =========================================================
+   LARGE DESKTOP
+========================================================= */
+
+@media (min-width: 1600px) {
+  .logo {
+    width: 235px;
+  }
+
+  .content h1 {
+    font-size: 61px;
+  }
+
+  .message {
+    font-size: 15px;
+  }
+}
+
+
+/* =========================================================
+   MACBOOK / SMALLER DESKTOP
+========================================================= */
+
+@media (min-width: 1101px) and (max-width: 1439px) {
+  .logoLink {
+    margin-bottom: 32px;
+  }
+
+  .logo {
+    width: 205px;
+  }
+
+  .successMark {
+    width: 54px;
+    height: 54px;
+
+    margin-bottom: 21px;
+  }
+
+  .content h1 {
+    font-size: clamp(42px, 4vw, 51px);
+  }
+
+  .message {
+    font-size: 13px;
+  }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (min-width: 768px) and (max-width: 1100px) {
+  .logo {
+    width: 205px;
+  }
+
+  .content h1 {
+    font-size: clamp(43px, 6vw, 53px);
+  }
+
+  .message {
+    max-width: 450px;
+
+    font-size: 13px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+  .page {
+    padding: 44px 18px;
+  }
+
+  .logoLink {
+    margin-bottom: 31px;
+  }
+
+  .logo {
+    width: 190px;
+  }
+
+  .successMark {
+    width: 52px;
+    height: 52px;
+
+    margin-bottom: 20px;
+  }
+
+  .checkmark {
+    width: 14px;
+    height: 23px;
+  }
+
+  .eyebrow {
+    font-size: 9px;
+  }
+
+  .content h1 {
+    margin-top: 13px;
+
+    font-size: clamp(35px, 9.4vw, 46px);
+  }
+
+  .message {
+    max-width: 360px;
+
+    margin-top: 16px;
+
+    font-size: 12.5px;
+
+    line-height: 1.7;
+  }
+
+  .urgent {
+    margin-top: 21px;
+
+    font-size: 11.5px;
+  }
+
+  .homeLink {
+    margin-top: 18px;
+
+    font-size: 11px;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 420px) {
+  .page {
+    padding: 38px 15px;
+  }
+
+  .logo {
+    width: 175px;
+  }
+
+  .content h1 {
+    font-size: clamp(32px, 9.1vw, 39px);
+  }
+
+  .message {
+    font-size: 11.8px;
+  }
+
+  .urgent {
+    font-size: 11px;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .urgent a,
+  .homeLink {
+    transition: none;
+  }
+}

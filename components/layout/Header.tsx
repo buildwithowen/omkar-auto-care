@@ -3,62 +3,41 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
+
 import styles from "./Header.module.css";
+
+
+/* =========================================================
+   APPROVED SERVICES
+========================================================= */
 
 const services = [
   {
-    label: "Shaft, Axle & Wheel Bearing",
-    href: "/shaft-axle-or-wheel-bearing",
-  },
-  {
-    label: "Exhaust & Emission Systems",
-    href: "/exhaust-emission-systems",
-  },
-  {
-    label: "Clutch & Transmission",
-    href: "/clutch-transmission",
-  },
-  {
-    label: "Air Conditioning & Heating",
-    href: "/aircon-heating",
-  },
-  {
-    label: "Serpentine & Timing Belt",
-    href: "/serpentine-timing-belt",
-  },
-  {
-    label: "Minor Service",
-    href: "/minor-service",
-  },
-  {
-    label: "Engine",
-    href: "/engine",
+    label: "Accessories & Audio",
+    href: "/accessories-audio",
   },
   {
     label: "Brake Systems",
     href: "/brake-systems",
   },
   {
-    label: "Accessories & Audio",
-    href: "/accessories-audio",
+    label: "Engine",
+    href: "/engine",
+  },
+  {
+    label: "Minor Service",
+    href: "/minor-service",
+  },
+  {
+    label: "Serpentine & Timing Belt",
+    href: "/serpentine-timing-belt",
   },
   {
     label: "Suspension & Shock Absorbers",
     href: "/suspension-shock-absorbers",
   },
-  {
-    label: "System Diagnosis & Repair",
-    href: "/system-diagnosis-repair",
-  },
-  {
-    label: "Shocks & Struts Replacement",
-    href: "/shocks-struts-replacement",
-  },
-  {
-    label: "Brake Repair, Pads & Rotors",
-    href: "/brake-repair-pads-rotors",
-  },
 ];
+
 
 export default function Header() {
   const [servicesOpen, setServicesOpen] = useState(false);
@@ -196,18 +175,7 @@ export default function Header() {
 
             {servicesOpen && (
               <div className={styles.dropdown}>
-
-                <Link
-                  href="/services-repairs"
-                  className={styles.dropdownParent}
-                  onClick={() =>
-                    setServicesOpen(false)
-                  }
-                >
-                  View All Services
-                </Link>
-
-                <div className={styles.dropdownGrid}>
+<div className={styles.dropdownGrid}>
 
                   {services.map((service) => (
                     <Link
@@ -291,16 +259,7 @@ export default function Header() {
 
             {mobileServicesOpen && (
               <div className={styles.mobileServicesList}>
-
-                <Link
-                  href="/services-repairs"
-                  className={styles.mobileViewAll}
-                  onClick={closeMobileMenu}
-                >
-                  View All Services
-                </Link>
-
-                {services.map((service) => (
+{services.map((service) => (
                   <Link
                     key={service.href}
                     href={service.href}

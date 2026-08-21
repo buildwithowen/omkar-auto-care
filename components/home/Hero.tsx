@@ -3,6 +3,10 @@ import ContactForm from "@/components/forms/ContactForm";
 import ServiceProcessBar from "@/components/home/ServiceProcessBar";
 import styles from "./Hero.module.css";
 
+const GOOGLE_REVIEWS_URL = "https://share.google/r8DdLR7WgoDlcMfvd";
+const GOOGLE_RATING = "5.0";
+const GOOGLE_REVIEW_COUNT = 71;
+
 export default function Hero() {
   return (
     <section className={styles.hero}>
@@ -36,32 +40,36 @@ export default function Hero() {
           </p>
 
           {/* GOOGLE REVIEWS */}
-          <div className={styles.reviews}>
-            <div className={styles.reviewTop}>
-              <Image
-                src="/icons/hero/google-logo.svg"
-                alt="Google"
-                width={28}
-                height={28}
-                className={styles.googleLogo}
-              />
+          <a
+            href={GOOGLE_REVIEWS_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.reviews}
+            aria-label={`Rated ${GOOGLE_RATING} out of 5 based on ${GOOGLE_REVIEW_COUNT} Google reviews. Open Google Business Profile.`}
+          >
+            <span className={styles.googleWordmark} aria-hidden="true">
+              <span>G</span>
+              <span>o</span>
+              <span>o</span>
+              <span>g</span>
+              <span>l</span>
+              <span>e</span>
+            </span>
 
-              <div className={styles.stars} aria-label="5 star rating">
+            <span className={styles.reviewTop}>
+              <span className={styles.rating}>{GOOGLE_RATING}</span>
+
+              <span className={styles.stars} aria-hidden="true">
                 ★★★★★
-              </div>
-            </div>
+              </span>
+            </span>
 
-            <p>
-              5-star rating on Google, based on over{" "}
-              <a
-                href="https://maps.app.goo.gl/GrVfMc33fuNNV17c9"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                70 reviews
-              </a>
-            </p>
-          </div>
+            <span className={styles.reviewCaption}>
+              Based on{" "}
+              <span className={styles.reviewCount}>{GOOGLE_REVIEW_COUNT}</span>{" "}
+              Google reviews
+            </span>
+          </a>
         </div>
 
         {/* RIGHT SIDE */}

@@ -1,0 +1,559 @@
+/* =========================================================
+   OMKAR AUTOCARE — ABOUT HERO
+========================================================= */
+
+.hero {
+  position: relative;
+
+  width: 100%;
+
+  min-height: 760px;
+
+  display: flex;
+  align-items: center;
+
+  padding-top: 205px;
+  padding-bottom: 110px;
+
+  overflow: hidden;
+
+  background-color: #111111;
+
+  color: #ffffff;
+
+  font-family:
+    var(--font-montserrat),
+    "Montserrat",
+    sans-serif;
+}
+
+
+/* =========================================================
+   OPTIMISED BACKGROUND IMAGE
+========================================================= */
+
+.backgroundImage {
+  position: absolute !important;
+  inset: 0;
+
+  width: 100% !important;
+  height: 100% !important;
+
+  object-fit: cover;
+  object-position: center;
+
+  z-index: 0;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   DARK OVERLAY
+========================================================= */
+
+.overlay {
+  position: absolute;
+  inset: 0;
+
+  z-index: 1;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(10, 10, 10, 0.91) 0%,
+      rgba(10, 10, 10, 0.83) 48%,
+      rgba(10, 10, 10, 0.76) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.05) 0%,
+      rgba(0, 0, 0, 0.17) 100%
+    );
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   APPROVED WEBSITE CONTAINER
+========================================================= */
+
+.inner {
+  position: relative;
+  z-index: 2;
+
+  width: min(calc(100% - 96px), 1540px);
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.15fr)
+    minmax(380px, 0.75fr);
+
+  align-items: center;
+
+  gap: 88px;
+}
+
+
+/* =========================================================
+   LEFT CONTENT
+========================================================= */
+
+.content {
+  width: 100%;
+
+  max-width: 780px;
+}
+
+
+/* =========================================================
+   EYEBROW
+========================================================= */
+
+.eyebrow {
+  display: inline-block;
+
+  margin-bottom: 18px;
+
+  color: #fd8833;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  line-height: 1.5;
+
+  letter-spacing: 0.14em;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   PAGE TITLE
+========================================================= */
+
+.content h1 {
+  max-width: 780px;
+
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: clamp(42px, 3.7vw, 58px);
+  font-weight: 600;
+
+  line-height: 1.08;
+
+  letter-spacing: -0.04em;
+}
+
+.content h1 span {
+  color: #fd8833;
+
+  font-size: clamp(29px, 2.45vw, 40px);
+
+  white-space: normal;
+}
+
+
+/* =========================================================
+   INTRODUCTION
+========================================================= */
+
+.content > p {
+  max-width: 650px;
+
+  margin: 24px 0 0;
+
+  color: rgba(255, 255, 255, 0.8);
+
+  font-size: 15px;
+  font-weight: 400;
+
+  line-height: 1.75;
+}
+
+
+/* =========================================================
+   CUSTOMER ASSURANCE PANEL
+========================================================= */
+
+.assurancePanel {
+  width: 100%;
+  max-width: 500px;
+
+  justify-self: end;
+
+  padding: 34px 36px 25px;
+
+  border: 1px solid rgba(255, 255, 255, 0.16);
+
+  background-color: rgba(17, 17, 17, 0.46);
+
+  backdrop-filter: blur(7px);
+}
+
+.panelEyebrow {
+  display: inline-block;
+
+  color: #fd8833;
+
+  font-size: 10px;
+  font-weight: 600;
+
+  line-height: 1.5;
+
+  letter-spacing: 0.13em;
+
+  text-transform: uppercase;
+}
+
+.assurancePanel h2 {
+  max-width: 400px;
+
+  margin: 11px 0 0;
+
+  color: #ffffff;
+
+  font-size: 27px;
+  font-weight: 600;
+
+  line-height: 1.2;
+
+  letter-spacing: -0.035em;
+}
+
+
+/* =========================================================
+   NUMBERED ASSURANCES
+========================================================= */
+
+.assuranceList {
+  margin-top: 26px;
+}
+
+.assuranceItem {
+  display: grid;
+
+  grid-template-columns:
+    32px
+    minmax(0, 1fr);
+
+  align-items: center;
+
+  gap: 10px;
+
+  min-height: 67px;
+
+  padding: 14px 0;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.assuranceNumber {
+  color: #fd8833;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  line-height: 1.5;
+
+  font-variant-numeric: tabular-nums;
+}
+
+.assuranceText {
+  color: rgba(255, 255, 255, 0.88);
+
+  font-size: 13px;
+  font-weight: 500;
+
+  line-height: 1.55;
+}
+
+
+/* =========================================================
+   LARGE DESKTOP
+========================================================= */
+
+@media (min-width: 1600px) {
+  .hero {
+    min-height: 800px;
+
+    padding-top: 210px;
+    padding-bottom: 130px;
+  }
+
+  .inner {
+    width: min(calc(100% - 104px), 1600px);
+
+    gap: 100px;
+  }
+
+  .content h1 {
+    font-size: 60px;
+  }
+
+  .content h1 span {
+    font-size: 42px;
+  }
+
+  .assurancePanel {
+    max-width: 520px;
+  }
+}
+
+
+/* =========================================================
+   MACBOOK / SMALLER DESKTOP
+========================================================= */
+
+@media (min-width: 1101px) and (max-width: 1439px) {
+  .hero {
+    min-height: 690px;
+
+    padding-top: 190px;
+    padding-bottom: 96px;
+  }
+
+  .inner {
+    gap: 64px;
+  }
+
+  .content h1 {
+    font-size: clamp(41px, 4vw, 52px);
+  }
+
+  .content h1 span {
+    font-size: clamp(27px, 2.7vw, 36px);
+  }
+
+  .content > p {
+    font-size: 14px;
+  }
+
+  .assurancePanel {
+    max-width: 455px;
+
+    padding: 30px 30px 21px;
+  }
+
+  .assurancePanel h2 {
+    font-size: 25px;
+  }
+
+  .assuranceText {
+    font-size: 12px;
+  }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (min-width: 768px) and (max-width: 1100px) {
+  .hero {
+    min-height: 660px;
+
+    padding-top: 195px;
+    padding-bottom: 88px;
+  }
+
+  .inner {
+    width: min(calc(100% - 40px), 1540px);
+
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(315px, 0.85fr);
+
+    gap: 40px;
+  }
+
+  .eyebrow {
+    margin-bottom: 14px;
+
+    font-size: 9px;
+  }
+
+  .content h1 {
+    font-size: clamp(34px, 4.6vw, 46px);
+  }
+
+  .content h1 span {
+    font-size: clamp(23px, 3.1vw, 32px);
+  }
+
+  .content > p {
+    margin-top: 18px;
+
+    font-size: 12.5px;
+
+    line-height: 1.65;
+  }
+
+  .assurancePanel {
+    padding: 25px 23px 18px;
+  }
+
+  .panelEyebrow {
+    font-size: 8.5px;
+  }
+
+  .assurancePanel h2 {
+    font-size: 22px;
+  }
+
+  .assuranceList {
+    margin-top: 20px;
+  }
+
+  .assuranceItem {
+    grid-template-columns:
+      25px
+      minmax(0, 1fr);
+
+    gap: 7px;
+
+    min-height: 60px;
+  }
+
+  .assuranceText {
+    font-size: 11px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+  .hero {
+    min-height: auto;
+
+    display: block;
+
+    padding-top: 127px;
+    padding-bottom: 62px;
+  }
+
+  .inner {
+    width: calc(100% - 36px);
+
+    grid-template-columns: 1fr;
+
+    gap: 34px;
+  }
+
+  .content {
+    max-width: 100%;
+  }
+
+  .eyebrow {
+    margin-bottom: 13px;
+
+    font-size: 9px;
+  }
+
+  .content h1 {
+    font-size: clamp(35px, 8.4vw, 46px);
+  }
+
+  .content h1 span {
+    font-size: clamp(22px, 5.6vw, 30px);
+  }
+
+  .content > p {
+    max-width: 100%;
+
+    margin-top: 17px;
+
+    font-size: 13px;
+
+    line-height: 1.65;
+  }
+
+  .assurancePanel {
+    max-width: none;
+
+    justify-self: stretch;
+
+    padding: 25px 21px 17px;
+  }
+
+  .panelEyebrow {
+    font-size: 9px;
+  }
+
+  .assurancePanel h2 {
+    font-size: 23px;
+  }
+
+  .assuranceList {
+    margin-top: 19px;
+  }
+
+  .assuranceItem {
+    min-height: 59px;
+
+    padding: 12px 0;
+  }
+
+  .assuranceText {
+    font-size: 12px;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 420px) {
+  .hero {
+    padding-top: 120px;
+    padding-bottom: 54px;
+  }
+
+  .inner {
+    width: calc(100% - 30px);
+
+    gap: 30px;
+  }
+
+  .content h1 {
+    font-size: clamp(32px, 8.2vw, 39px);
+  }
+
+  .content h1 span {
+    font-size: clamp(20px, 5.3vw, 25px);
+  }
+
+  .content > p {
+    font-size: 12px;
+  }
+
+  .assurancePanel {
+    padding: 23px 18px 15px;
+  }
+
+  .assurancePanel h2 {
+    font-size: 21px;
+  }
+
+  .assuranceItem {
+    grid-template-columns:
+      24px
+      minmax(0, 1fr);
+
+    gap: 6px;
+  }
+
+  .assuranceText {
+    font-size: 11px;
+  }
+}

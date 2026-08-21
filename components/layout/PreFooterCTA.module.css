@@ -13,12 +13,7 @@
 
   overflow: hidden;
 
-  background-image:
-    url("/images/home/omkar-autocare-prefooter-cta.webp");
-
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background-color: #111111;
 
   color: #ffffff;
 
@@ -26,6 +21,31 @@
     var(--font-montserrat),
     "Montserrat",
     sans-serif;
+}
+
+
+/* =========================================================
+   MIRRORED BACKGROUND IMAGE
+========================================================= */
+
+.section::before {
+  position: absolute;
+  inset: 0;
+
+  z-index: 0;
+
+  background-image:
+    url("/images/home/omkar-autocare-prefooter-cta.webp");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  transform: scaleX(-1);
+
+  pointer-events: none;
+
+  content: "";
 }
 
 
@@ -376,7 +396,9 @@
 
   .section {
     min-height: auto;
+  }
 
+  .section::before {
     background-position: center;
   }
 

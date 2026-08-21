@@ -1,5 +1,7 @@
 "use client";
 
+import { useContactSubmission } from "@/components/forms/useContactSubmission";
+
 import { useState } from "react";
 import Button from "@/components/ui/Button";
 import styles from "./ContactForm.module.css";
@@ -28,6 +30,12 @@ export default function ContactForm() {
   const [servicesOpen, setServicesOpen] = useState(false);
   const [selectedServices, setSelectedServices] = useState<string[]>([]);
 
+  const {
+    handleSubmit,
+    isSubmitting,
+    submissionError,
+  } = useContactSubmission(selectedServices);
+
   const toggleService = (service: string) => {
     setSelectedServices((current) =>
       current.includes(service)
@@ -37,7 +45,10 @@ export default function ContactForm() {
   };
 
   return (
-    <form className={styles.form}>
+    <form
+      className={styles.form}
+      onSubmit={handleSubmit}
+    >
       <div className={styles.grid}>
         <div className={styles.field}>
           <label htmlFor="fullName">Full Name</label>
@@ -148,8 +159,23 @@ export default function ContactForm() {
       </div>
 
       <Button type="submit" fullWidth>
-        Submit
+        {isSubmitting ? "Sending..." : "Submit"}
       </Button>
+    
+      {submissionError && (
+        <p
+          role="alert"
+          style={{
+            margin: "12px 0 0",
+            color: "#ffb4a8",
+            fontSize: "12px",
+            lineHeight: "1.6",
+          }}
+        >
+          {submissionError}
+        </p>
+      )}
+
     </form>
   );
 }

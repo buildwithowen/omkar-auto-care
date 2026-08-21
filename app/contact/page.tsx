@@ -1,43 +1,63 @@
 import type { Metadata } from "next";
-import Header from "@/components/layout/Header";
-import ContactForm from "@/components/forms/ContactForm";
-import styles from "@/components/shared/TemporaryServicePage.module.css";
+
+import ContactHero from "@/components/contact/ContactHero";
+
+import ContactDetailsSection from "@/components/contact/ContactDetailsSection";
+
+import TopTierServicesSection from "@/components/home/TopTierServicesSection";
+
+import FAQSection from "@/components/home/FAQSection";
+
+import WhyChooseUsSection from "@/components/home/WhyChooseUsSection";
+
+
+/* =========================================================
+   PAGE METADATA
+========================================================= */
 
 export const metadata: Metadata = {
-  title: "Contact | Omkar Autocare",
+  title: "Contact Us",
+
   description:
-    "Contact Omkar Autocare for vehicle servicing, repairs and automotive enquiries.",
+    "Contact OMKAR Autocare for mobile car servicing, vehicle repairs and professional automotive advice. Call 0430 729 392 or request a booking online.",
+
   robots: {
     index: false,
     follow: true,
   },
 };
 
+
+/* =========================================================
+   CONTACT PAGE
+========================================================= */
+
 export default function ContactPage() {
   return (
     <>
-      <Header />
+      {/* DEDICATED CONTACT HERO AND FORM */}
 
-      <main className={styles.page}>
-        <div className={styles.glow} />
+      <ContactHero />
 
-        <div className={styles.content}>
-          <span className={styles.eyebrow}>
-            GET IN TOUCH
-          </span>
 
-          <h1>How can we help with your car?</h1>
+      {/* CONTACT DETAILS */}
 
-          <p>
-            Tell us what your vehicle needs and our team will get back to you
-            as soon as possible.
-          </p>
+      <ContactDetailsSection />
 
-          <div className={styles.contactFormWrap}>
-            <ContactForm />
-          </div>
-        </div>
-      </main>
+
+      {/* REUSABLE SERVICES GRID */}
+
+      <TopTierServicesSection />
+
+
+      {/* REUSABLE FREQUENTLY ASKED QUESTIONS */}
+
+      <FAQSection />
+
+
+      {/* REUSABLE WHY CHOOSE US SECTION */}
+
+      <WhyChooseUsSection />
     </>
   );
 }
