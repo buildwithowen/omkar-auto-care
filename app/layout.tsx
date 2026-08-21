@@ -2,6 +2,14 @@ import type { Metadata } from "next";
 
 import { Montserrat } from "next/font/google";
 
+import Header from "@/components/layout/Header";
+
+import PreFooterCTA from "@/components/layout/PreFooterCTA";
+
+import Footer from "@/components/layout/Footer";
+
+import ContactPopup from "@/components/forms/ContactPopup";
+
 import SiteChrome from "@/components/layout/SiteChrome";
 
 import "./globals.css";
@@ -52,7 +60,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={montserrat.variable}>
-        <SiteChrome>
+        <SiteChrome
+          header={<Header />}
+          preFooter={<PreFooterCTA />}
+          footer={<Footer />}
+          contactPopup={<ContactPopup />}
+        >
           {children}
         </SiteChrome>
       </body>

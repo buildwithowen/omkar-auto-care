@@ -80,7 +80,6 @@ export default function Header() {
                 alt="Omkar Autocare"
                 width={320}
                 height={140}
-                priority
                 className={styles.logo}
               />
             </div>

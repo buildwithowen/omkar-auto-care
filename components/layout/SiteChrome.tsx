@@ -4,13 +4,22 @@ import type { ReactNode } from "react";
 
 import { usePathname } from "next/navigation";
 
-import Header from "@/components/layout/Header";
 
-import PreFooterCTA from "@/components/layout/PreFooterCTA";
+/* =========================================================
+   SITE CHROME PROPS
+========================================================= */
 
-import Footer from "@/components/layout/Footer";
+type SiteChromeProps = {
+  children: ReactNode;
 
-import ContactPopup from "@/components/forms/ContactPopup";
+  header: ReactNode;
+
+  preFooter: ReactNode;
+
+  footer: ReactNode;
+
+  contactPopup: ReactNode;
+};
 
 
 /* =========================================================
@@ -19,9 +28,15 @@ import ContactPopup from "@/components/forms/ContactPopup";
 
 export default function SiteChrome({
   children,
-}: {
-  children: ReactNode;
-}) {
+
+  header,
+
+  preFooter,
+
+  footer,
+
+  contactPopup,
+}: SiteChromeProps) {
   const pathname = usePathname();
 
   const isThankYouPage =
@@ -30,10 +45,7 @@ export default function SiteChrome({
 
 
   /* =======================================================
-     CLEAN THANK YOU PAGE
-
-     No header, navigation, footer, promotional sections
-     or contact popup.
+     DISTRACTION-FREE THANK YOU PAGE
   ======================================================= */
 
   if (isThankYouPage) {
@@ -47,31 +59,17 @@ export default function SiteChrome({
 
   return (
     <>
-      {/* GLOBAL HEADER */}
-
-      <Header />
-
-
-      {/* PAGE CONTENT */}
+      {header}
 
       <main>
         {children}
 
-
-        {/* GLOBAL BEFORE-FOOTER SECTION */}
-
-        <PreFooterCTA />
+        {preFooter}
       </main>
 
+      {footer}
 
-      {/* GLOBAL FOOTER */}
-
-      <Footer />
-
-
-      {/* GLOBAL CONTACT POPUP */}
-
-      <ContactPopup />
+      {contactPopup}
     </>
   );
 }
