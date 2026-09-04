@@ -45,6 +45,17 @@ export const metadata: Metadata = {
   metadataBase: new URL(
     "https://omkarautocare.com.au"
   ),
+
+  icons: {
+    icon: {
+      url: "/images/omkar-autocare-favicon.webp",
+      type: "image/webp",
+    },
+
+    shortcut: "/images/omkar-autocare-favicon.webp",
+
+    apple: "/images/omkar-autocare-favicon.webp",
+  },
 };
 
 
