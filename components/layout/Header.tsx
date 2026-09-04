@@ -67,7 +67,7 @@ export default function Header() {
 
         <div className={styles.topRow}>
 
-          {/* LOGO + TAGLINE */}
+          {/* LOGO */}
 
           <Link
             href="/"
@@ -76,18 +76,13 @@ export default function Header() {
           >
             <div className={styles.logoWrap}>
               <Image
-                src="/images/omkar-autocare-logo.png"
-                alt="Omkar Autocare"
-                width={320}
-                height={140}
+                src="/images/omkar-autocare-mechanic.webp"
+                alt="Omkar Autocare Mobile Mechanic"
+                width={900}
+                height={400}
+                priority
                 className={styles.logo}
               />
-            </div>
-
-            <div className={styles.tagline}>
-              &quot;Putting the{" "}
-              <span>CARE</span>{" "}
-              into your car!&quot;
             </div>
           </Link>
 
@@ -174,7 +169,7 @@ export default function Header() {
 
             {servicesOpen && (
               <div className={styles.dropdown}>
-<div className={styles.dropdownGrid}>
+                <div className={styles.dropdownGrid}>
 
                   {services.map((service) => (
                     <Link
@@ -190,7 +185,6 @@ export default function Header() {
                   ))}
 
                 </div>
-
               </div>
             )}
 
@@ -258,7 +252,7 @@ export default function Header() {
 
             {mobileServicesOpen && (
               <div className={styles.mobileServicesList}>
-{services.map((service) => (
+                {services.map((service) => (
                   <Link
                     key={service.href}
                     href={service.href}
@@ -268,7 +262,6 @@ export default function Header() {
                     {service.label}
                   </Link>
                 ))}
-
               </div>
             )}
 

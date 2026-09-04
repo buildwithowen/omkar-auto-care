@@ -87,7 +87,7 @@ export default function Footer() {
               aria-label="OMKAR Autocare homepage"
             >
               <Image
-                src="/images/omkar-autocare-logo.png"
+                src="/images/omkar-autocare-mechanic.webp"
                 alt="OMKAR Autocare"
                 width={220}
                 height={100}
