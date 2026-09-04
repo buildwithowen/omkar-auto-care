@@ -8,20 +8,6 @@ import { useRouter } from "next/navigation";
 
 
 /* =========================================================
-   TEMPORARY TESTING EMAIL
-
-   Replace this address with the client's email address
-   once testing has been completed.
-========================================================= */
-
-const TESTING_EMAIL =
-  "owengenuino26@gmail.com";
-
-const FORM_ENDPOINT =
-  "https://formsubmit.co/ajax/" + TESTING_EMAIL;
-
-
-/* =========================================================
    SHARED FORM SUBMISSION HOOK
 ========================================================= */
 
@@ -78,39 +64,9 @@ export function useContactSubmission(
       formData.get("address") || ""
     ).trim();
 
-    const services =
-      selectedServices.length > 0
-        ? selectedServices.join(", ")
-        : "Not specified";
-
-    const enquiry = {
-      _subject:
-        "New OMKAR Autocare enquiry — " + fullName,
-
-      _template: "table",
-
-      _replyto: email,
-
-      "Full Name": fullName,
-
-      "Contact Number": contactNumber,
-
-      "Email Address": email,
-
-      "Vehicle Rego":
-        rego || "Not provided",
-
-      "Home Address": address,
-
-      "Services Required": services,
-
-      "Submitted From":
-        window.location.href,
-    };
-
     try {
       const response = await fetch(
-        FORM_ENDPOINT,
+        "/api/contact",
         {
           method: "POST",
 
@@ -120,12 +76,27 @@ export function useContactSubmission(
             Accept: "application/json",
           },
 
-          body: JSON.stringify(enquiry),
+          body: JSON.stringify({
+            fullName,
+
+            contactNumber,
+
+            email,
+
+            rego,
+
+            address,
+
+            services: selectedServices,
+
+            submittedFrom:
+              window.location.href,
+          }),
         }
       );
 
       let result: {
-        success?: boolean | string;
+        success?: boolean;
         message?: string;
       };
 
@@ -133,17 +104,13 @@ export function useContactSubmission(
         result = await response.json();
       } catch {
         throw new Error(
-          "The email service returned an unexpected response. Please try again."
+          "The server returned an unexpected response. Please try again."
         );
       }
 
-      const submittedSuccessfully =
-        result.success === true ||
-        result.success === "true";
-
       if (
         !response.ok ||
-        !submittedSuccessfully
+        result.success !== true
       ) {
         throw new Error(
           result.message ||
